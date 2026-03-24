@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naga's Club</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+
+*{
+box-sizing:border-box;
+padding:0;
+margin:0;
+}
+
+h2{
+text-align:center;
+font-size:40px;
+color:white;
+background:#891c33;
+font-family:verdana;
+padding:10px;
+}
+
+p{
+font-family:Montserrat;
+padding-left:20px;
+padding-right:20px;
+padding-top:10px;
+color:white;
+}
+
+body{
+margin-left:5%;
+margin-right:5%;
+	}
+
+header img{
+width:100%;
+}
+
+nav{
+width:100%;
+background:#333;
+margin-top:10px;
+position:relative;
+z-index:1000;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+}
+
+nav ul li{
+position:relative;
+}
+
+nav ul li a{
+display:block;
+padding:14px 20px;
+color:white;
+text-decoration:none;
+font-family:Montserrat;
+}
+
+nav ul li a:hover{
+background:#111;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#333;
+min-width:160px;
+top:100%;
+left:0;
+}
+
+.dropdown-content a{
+padding:12px 16px;
+display:block;
+color:white;
+}
+
+.dropdown-content a:hover{
+background:#111;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
+.produto{
+width:100%;
+margin-top:40px;
+overflow:hidden;
+background:#aa6a85;
+padding:20px;
+}
+
+.produto-img{
+width:40%;
+float:left;
+}
+
+.produto-img img{
+width:100%;
+}
+
+.produto-info{
+width:60%;
+float:left;
+padding-left:30px;
+}
+
+.produto-info h2{
+background:none;
+text-align:left;
+font-size:35px;
+}
+
+.produto-info p{
+color:white;
+font-size:16px;
+line-height:1.6;
+}
+
+.preco{
+font-size:30px;
+color:#ffd700;
+margin-top:15px;
+font-weight:bold;
+}
+
+.botao-comprar{
+margin-top:20px;
+display:inline-block;
+padding:12px 25px;
+background:#891c33;
+color:white;
+text-decoration:none;
+font-family:Montserrat;
+font-size:16px;
+border-radius:4px;
+}
+
+.botao-comprar:hover{
+background:#5e1223;
+}
+
+
+footer{
+background:#891c33;
+color:white;
+text-align:center;
+padding:15px;
+font-family:Montserrat;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+	<img src="imagens/banner colorido.gif">
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">HOME</a></li>
+
+<li class="dropdown">
+<a href="ilustras.html">ILUSTRAÇÕES</a>
+<div class="dropdown-content">
+<a href="ilustras.html">GERAL</a>
+<a href="#ilustrascolab">COLABS</a>
+</div>
+</li>
+
+<li class="dropdown">
+<a href="animas.html">ANIMAÇÕES</a>
+<div class="dropdown-content">
+<a href="animas.html">GERAL</a>
+<a href="animacolab.html">COLABS</a>
+</div>
+</li>
+
+<li class="dropdown">
+<a href="grafites.html">STREET ART</a>
+<div class="dropdown-content">
+<a href="grafites.html">GRAFITES</a>
+<a href="lambe.html">LAMBE-LAMBE</a>
+</div>
+</li>
+
+<li class="dropdown">
+<a href="hq.html">HQ'S</a>
+<div class="dropdown-content">
+<a href="#">TIRINHAS</a>
+<a href="hq.html">SERIES</a>
+</div>
+</li>
+
+<li><a href="produtos.html">PRODUTOS</a></li>
+
+<li class="dropdown">
+<a href="expos.html">SOBRE</a>
+<div class="dropdown-content">
+<a href="expos.html">EXPOSIÇÕES</a>
+<a href="contato.html">CONTATO</a>
+</div>
+</li>
+
+</ul>
+</nav>
+
+<main>
+
+<article class="produto">
+
+<div class="produto-img">
+<img src="imagens/c1.jpg">
+</div>
+
+<div class="produto-info">
+
+<h2>Camiseta Pussy cat</h2>
+
+<p>
+Camiseta "Pussy Cat", arte autoral exclusiva do Naga's Club.
+
+Cada peça é pensada para transformar uma simples camiseta em um grande close.
+
+Disponível nos tamanhos PP, P, M, G, GG e XG, garantindo conforto para diferentes corpos e estilos.
+
+Disponíveis nas cores branca e preta, perfeitas para destacar as artes e combinar com qualquer visual.
+
+Ideal para quem quer vestir arte e apoiar artistas independentes.
+</p>
+
+<div class="preco">
+R$ 99,90
+</div>
+
+<a href="#" class="botao-comprar">Comprar</a>
+
+</div>
+
+</article>
+
+<article class="produto">
+
+<div class="produto-img">
+<img src="imagens/c2.jpg">
+</div>
+
+<div class="produto-info">
+
+<h2>Camiseta Caracool</h2>
+
+<p>
+Camiseta "Caracool", arte autoral exclusiva do Naga's Club.
+
+Cada peça é pensada para transformar uma simples camiseta em um grande close.
+
+Disponível nos tamanhos PP, P, M, G, GG e XG, garantindo conforto para diferentes corpos e estilos.
+
+Disponíveis nas cores branca e preta, perfeitas para destacar as artes e combinar com qualquer visual.
+
+Ideal para quem quer vestir arte e apoiar artistas independentes.
+</p>
+
+<div class="preco">
+R$ 99,90
+</div>
+
+<a href="#" class="botao-comprar">Comprar</a>
+
+</div>
+
+</article>
+
+<article class="produto">
+
+<div class="produto-img">
+<img src="imagens/c3.jpg">
+</div>
+
+<div class="produto-info">
+
+<h2>Camiseta Mia Wallace</h2>
+
+<p>
+Camiseta "Mia Wallace", arte autoral exclusiva do Naga's Club.
+
+Cada peça é pensada para transformar uma simples camiseta em um grande close.
+
+Disponível nos tamanhos PP, P, M, G, GG e XG, garantindo conforto para diferentes corpos e estilos.
+
+Disponíveis nas cores branca e preta, perfeitas para destacar as artes e combinar com qualquer visual.
+
+Ideal para quem quer vestir arte e apoiar artistas independentes.
+
+<div class="preco">
+R$ 99,90
+</div>
+
+<a href="#" class="botao-comprar">Comprar</a>
+
+</div>
+
+</article>
+
+<article class="produto">
+
+<div class="produto-img">
+<img src="imagens/p1.jpg">
+</div>
+
+<div class="produto-info">
+
+<h2>Print - Devil Factory</h2>
+
+<p>
+Ilustração original do projeto Naga's Club.  
+Arte inspirada na estética underground, street art e cultura pop alternativa.
+
+Impressão A4 em papel couchê 300g com cores vibrantes e acabamento profissional.
+</p>
+
+<div class="preco">
+R$ 49,90
+</div>
+
+<a href="#" class="botao-comprar">Comprar</a>
+
+</div>
+
+</article>
+
+
+<article class="produto">
+
+<div class="produto-img">
+<img src="imagens/p2.jpg">
+</div>
+
+<div class="produto-info">
+
+<h2>Print - Barbie Dello's</h2>
+
+<p>
+Ilustração original do projeto Naga's Club.  
+Arte inspirada na estética underground, street art e cultura pop alternativa.
+
+Impressão em papel couchê 300g com cores vibrantes e acabamento profissional.
+</p>
+
+<div class="preco">
+R$ 49,90
+</div>
+
+<a href="#" class="botao-comprar">Comprar</a>
+
+</div>
+
+</article>
+
+</main>
+
+<footer>
+<p>© 2026 Naga's Club — Apoie artistas independentes.</p>
+</footer>
+
+</body>
+</html>
