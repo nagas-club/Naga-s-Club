@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nagaz Rage - Parte I</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 30px;
+            background-color: #111;
+            color: white;
+            font-family: Verdana, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #891c33;
+            padding: 15px;
+            margin: 0 auto 30px auto;
+            max-width: 1000px;
+            font-size: 32px;
+        }
+
+        .carrossel-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carousel-inner {
+            background-color: #000;
+        }
+
+        .carousel-inner .item img {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* Setas */
+
+        .carousel-control.left,
+        .carousel-control.right {
+            background-image: none;
+        }
+
+        .carousel-control {
+            width: 10%;
+        }
+
+        .carousel-control .glyphicon {
+            top: 50%;
+            font-size: 30px;
+        }
+
+        /* Indicadores */
+
+        .carousel-indicators {
+            bottom: 10px;
+        }
+
+        /* Botão voltar */
+
+        .voltar {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0 auto;
+            padding: 10px 20px;
+            background-color: #891c33;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .voltar:hover {
+            background-color: #aa6a85;
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           CELULAR
+           ========================= */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 22px;
+                padding: 12px;
+                margin-bottom: 20px;
+            }
+
+            .carrossel-container {
+                width: 100%;
+            }
+
+            .carousel-control .glyphicon {
+                font-size: 22px;
+            }
+
+            .carousel-indicators {
+                bottom: 5px;
+            }
+
+            .voltar {
+                font-size: 13px;
+                padding: 9px 16px;
+                margin-top: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>Nagaz Rage - Parte I</h1>
+
+
+    <div class="carrossel-container">
+
+        <div id="hqCarousel" class="carousel slide" data-ride="carousel">
+
+
+            <!-- INDICADORES -->
+
+            <ol class="carousel-indicators">
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="0"
+                    class="active"></li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="1"></li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="2"></li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="3"></li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="4"></li>
+
+            </ol>
+
+
+            <!-- IMAGENS -->
+
+            <div class="carousel-inner">
+
+
+                <!-- PÁGINA 1 -->
+
+                <div class="item active">
+
+                    <img src="imagens/rage01.jpg"
+                         alt="Nagaz Rage - Página 1">
+
+                </div>
+
+
+                <!-- PÁGINA 2 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage02.jpg"
+                         alt="Nagaz Rage - Página 2">
+
+                </div>
+
+
+                <!-- PÁGINA 3 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage03.jpg"
+                         alt="Nagaz Rage - Página 3">
+
+                </div>
+
+
+                <!-- PÁGINA 4 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage04.jpg"
+                         alt="Nagaz Rage - Página 4">
+
+                </div>
+
+
+                <!-- PÁGINA 5 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage05.jpg"
+                         alt="Nagaz Rage - Página 5">
+
+                </div>
+
+
+            </div>
+
+
+            <!-- SETA ESQUERDA -->
+
+            <a class="left carousel-control"
+               href="#hqCarousel"
+               data-slide="prev">
+
+                <span class="glyphicon glyphicon-chevron-left"></span>
+
+                <span class="sr-only">Anterior</span>
+
+            </a>
+
+
+            <!-- SETA DIREITA -->
+
+            <a class="right carousel-control"
+               href="#hqCarousel"
+               data-slide="next">
+
+                <span class="glyphicon glyphicon-chevron-right"></span>
+
+                <span class="sr-only">Próxima</span>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTÃO VOLTAR -->
+
+    <a href="hq.html" class="voltar">
+        ← Voltar para HQ's
+    </a>
+
+
+    <!-- jQuery -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
