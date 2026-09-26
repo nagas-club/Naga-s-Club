@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Naga's Club</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,19 +13,25 @@
 
 <style>
 
-*{box-sizing:border-box;
+*{
+	box-sizing:border-box;
 	padding:0;
 	margin:0;
-	}
+}
 
 body{
 	margin-left:5%;
 	margin-right:5%;
-	}
+}
+
+/* BANNER */
 
 header img{
 	width:100%;
-	}
+	display:block;
+}
+
+/* MENU */
 
 nav{
 	width:100%;
@@ -32,16 +39,16 @@ nav{
 	margin-top:10px;
 	position:relative;
 	z-index:1000;
-	}
+}
 
 nav ul{
 	list-style:none;
 	display:flex;
-	}
+}
 
 nav ul li{
 	position:relative;
-	}
+}
 
 nav ul li a{
 	display:block;
@@ -49,11 +56,13 @@ nav ul li a{
 	color:white;
 	text-decoration:none;
 	font-family:Montserrat;
-	}
+}
 
 nav ul li a:hover{
 	background:#111;
-	}
+}
+
+/* SUBMENU */
 
 .dropdown-content{
 	display:none;
@@ -62,161 +71,308 @@ nav ul li a:hover{
 	min-width:160px;
 	top:100%;
 	left:0;
-	}
+}
 
 .dropdown-content a{
 	padding:12px 16px;
 	display:block;
 	color:white;
-	}
+}
 
 .dropdown-content a:hover{
 	background:#111;
-	}
+}
 
 .dropdown:hover .dropdown-content{
 	display:block;
-	}
+}
 
+/* GALERIA */
 
 .galeria{
 	margin-top:40px;
 	display:grid;
 	grid-template-columns:repeat(4,1fr);
 	gap:30px;
-	}
+}
 
 .artes{
 	position:relative;
 	width:100%;
 	aspect-ratio:1/1;
 	overflow:hidden;
-	}
-
+}
 
 .artes img{
 	width:100%;
 	height:100%;
 	object-fit:cover;
+	display:block;
 	transition:transform 0.4s;
-	}
-
-
+}
 
 .artes:hover img{
 	transform:scale(1.1);
 	filter:brightness(70%);
-	}
+}
+
+/* FOOTER */
 
 footer{
-background:#891c33;
-color:white;
-text-align:center;
-padding:15px;
-font-family:Montserrat;
-margin-top:40px;
-}	
+	background:#891c33;
+	color:white;
+	text-align:center;
+	padding:15px;
+	font-family:Montserrat;
+	margin-top:40px;
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width:768px){
+
+	/* ESPAÇAMENTO */
+
+	body{
+		margin-left:3%;
+		margin-right:3%;
+	}
+
+	/* BANNER */
+
+	header img{
+		width:100%;
+		height:auto;
+	}
+
+	/* MENU VERTICAL */
+
+	nav{
+		margin-top:8px;
+	}
+
+	nav ul{
+		display:flex;
+		flex-direction:column;
+		width:100%;
+	}
+
+	nav ul li{
+		width:100%;
+	}
+
+	nav ul li a{
+		width:100%;
+		text-align:center;
+		padding:12px 10px;
+		font-size:13px;
+	}
+
+	/* SUBMENU */
+
+	.dropdown-content{
+		position:static;
+		width:100%;
+		min-width:0;
+	}
+
+	.dropdown-content a{
+		padding:10px;
+		font-size:12px;
+		text-align:center;
+	}
+
+	/* GALERIA */
+
+	.galeria{
+		margin-top:25px;
+		grid-template-columns:repeat(2,1fr);
+		gap:10px;
+	}
+
+	.artes{
+		width:100%;
+		aspect-ratio:1/1;
+	}
+
+	.artes img{
+		width:100%;
+		height:100%;
+		object-fit:cover;
+		transform:none;
+		filter:none;
+	}
+
+	/* REMOVE ZOOM NO CELULAR */
+
+	.artes:hover img{
+		transform:none;
+		filter:none;
+	}
+
+	/* FOOTER */
+
+	footer{
+		margin-top:25px;
+		padding:12px 8px;
+		font-size:11px;
+		line-height:1.4;
+	}
+
+}
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
+
 	<img src="imagens/banner colorido.gif">
+
 </header>
+
 
 <nav>
 
 <ul>
 
-<li><a href="index.html">HOME</a></li>
+<li>
+	<a href="index.html">HOME</a>
+</li>
 
 <li class="dropdown">
+
 	<a href="ilustras.html">ILUSTRAÇÕES</a>
-	</li>
+
+</li>
 
 <li class="dropdown">
+
 	<a href="animas.html">ANIMAÇÕES</a>
+
 </li>
 
 <li class="dropdown">
+
 	<a href="grafites.html">STREET ART</a>
+
 	<div class="dropdown-content">
-	<a href="grafites.html">GRAFITES</a>
-	<a href="lambe.html">LAMBE-LAMBE</a>
+
+		<a href="grafites.html">GRAFITES</a>
+
+		<a href="lambe.html">LAMBE-LAMBE</a>
+
 	</div>
+
 </li>
 
 <li class="dropdown">
-<a href="hq.html">HQ'S</a>
+
+	<a href="hq.html">HQ'S</a>
+
 </li>
 
-<li><a href="produtos.html">PRODUTOS</a></li>
+<li>
+
+	<a href="produtos.html">PRODUTOS</a>
+
+</li>
 
 <li class="dropdown">
-<a href="expos.html">SOBRE</a>
-<div class="dropdown-content">
-<a href="expos.html">EXPOSIÇÕES</a>
-<a href="contato.html">CONTATO</a>
-</div>
+
+	<a href="expos.html">SOBRE</a>
+
+	<div class="dropdown-content">
+
+		<a href="expos.html">EXPOSIÇÕES</a>
+
+		<a href="contato.html">CONTATO</a>
+
+	</div>
+
 </li>
 
 </ul>
+
 </nav>
 
+
 <article class="galeria">
+
 
 <div class="artes">
 	<img src="imagens/l2.jpg">
 </div>
 
-<div class="artes">
-<img src="imagens/l8.jpg">
-</div>
 
 <div class="artes">
-<img src="imagens/l4.jpg">
+	<img src="imagens/l8.jpg">
 </div>
 
-<div class="artes">
-<img src="imagens/l6.jpg">
-</div>
 
 <div class="artes">
-<img src="imagens/l7.jpg">
+	<img src="imagens/l4.jpg">
 </div>
 
-<div class="artes">
-<img src="imagens/l12.jpg">
-</div>
 
 <div class="artes">
-<img src="imagens/l1.jpg">
+	<img src="imagens/l6.jpg">
 </div>
 
-<div class="artes">
-<img src="imagens/l5.jpg">
-</div>
 
 <div class="artes">
-<img src="imagens/l3.jpeg">
+	<img src="imagens/l7.jpg">
 </div>
 
-<div class="artes">
-<img src="imagens/l11.jpg">
-</div>
 
 <div class="artes">
-<img src="imagens/l10.jpg">
+	<img src="imagens/l12.jpg">
 </div>
+
+
+<div class="artes">
+	<img src="imagens/l1.jpg">
+</div>
+
+
+<div class="artes">
+	<img src="imagens/l5.jpg">
+</div>
+
+
+<div class="artes">
+	<img src="imagens/l3.jpeg">
+</div>
+
+
+<div class="artes">
+	<img src="imagens/l11.jpg">
+</div>
+
+
+<div class="artes">
+	<img src="imagens/l10.jpg">
+</div>
+
 
 </article>
 
+
 <footer>
-<p>© 2026 Naga's Club — Apoie artistas independentes.</p>
+
+<p>
+	© 2026 Naga's Club — Apoie artistas independentes.
+</p>
+
 </footer>
+
 
 </body>
 </html>
