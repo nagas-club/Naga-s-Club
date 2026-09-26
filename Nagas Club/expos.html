@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Naga's Club</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,7 +13,8 @@
 
 <style>
 
-*{box-sizing:border-box;
+*{
+	box-sizing:border-box;
 	padding:0;
 	margin:0;
 }
@@ -22,9 +24,14 @@ body{
 	margin-right:5%;
 }
 
+/* BANNER */
+
 header img{
 	width:100%;
+	display:block;
 }
+
+/* MENU */
 
 nav{
 	width:100%;
@@ -55,6 +62,8 @@ nav ul li a:hover{
 	background:#111;
 }
 
+/* SUBMENU */
+
 .dropdown-content{
 	display:none;
 	position:absolute;
@@ -78,6 +87,8 @@ nav ul li a:hover{
 	display:block;
 }
 
+/* GALERIA */
+
 .galeria{
 	margin-top:40px;
 	display:grid;
@@ -93,6 +104,7 @@ nav ul li a:hover{
 	width:100%;
 	aspect-ratio:1/1;
 	object-fit:cover;
+	display:block;
 	transition:transform 0.4s;
 }
 
@@ -100,6 +112,8 @@ nav ul li a:hover{
 	transform:scale(1.1);
 	filter:brightness(70%);
 }
+
+/* DESCRIÇÃO */
 
 .descricao{
 	font-family:Montserrat;
@@ -110,33 +124,147 @@ nav ul li a:hover{
 	background:#f5f5f5;
 	border:1px solid #ccc;
 	border-radius:4px;
+	line-height:1.4;
 }
 
-	footer{
+/* FOOTER */
+
+footer{
 	background:#891c33;
 	color:white;
 	text-align:center;
 	padding:15px;
 	font-family:Montserrat;
 	margin-top:40px;
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width:768px){
+
+	/* ESPAÇAMENTO */
+
+	body{
+		margin-left:3%;
+		margin-right:3%;
 	}
 
+	/* BANNER */
+
+	header img{
+		width:100%;
+		height:auto;
+	}
+
+	/* MENU VERTICAL */
+
+	nav{
+		margin-top:8px;
+	}
+
+	nav ul{
+		display:flex;
+		flex-direction:column;
+		width:100%;
+	}
+
+	nav ul li{
+		width:100%;
+	}
+
+	nav ul li a{
+		width:100%;
+		text-align:center;
+		padding:12px 10px;
+		font-size:13px;
+	}
+
+	/* SUBMENU */
+
+	.dropdown-content{
+		position:static;
+		width:100%;
+		min-width:0;
+	}
+
+	.dropdown-content a{
+		padding:10px;
+		font-size:12px;
+		text-align:center;
+	}
+
+	/* GALERIA */
+
+	.galeria{
+		margin-top:25px;
+		grid-template-columns:repeat(2,1fr);
+		gap:10px;
+	}
+
+	.artes{
+		width:100%;
+	}
+
+	.artes img{
+		width:100%;
+		aspect-ratio:1/1;
+		object-fit:cover;
+		transform:none;
+		filter:none;
+	}
+
+	/* REMOVE ZOOM NO CELULAR */
+
+	.artes:hover img{
+		transform:none;
+		filter:none;
+	}
+
+	/* DESCRIÇÃO */
+
+	.descricao{
+		font-size:11px;
+		padding:6px 4px;
+		margin-top:5px;
+		line-height:1.3;
+	}
+
+	/* FOOTER */
+
+	footer{
+		margin-top:25px;
+		padding:12px 8px;
+		font-size:11px;
+		line-height:1.4;
+	}
+
+}
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
+
 	<img src="imagens/banner colorido.gif">
+
 </header>
+
 
 <nav>
 
 <ul>
 
-<li><a href="index.html">HOME</a></li>
+<li>
+	<a href="index.html">HOME</a>
+</li>
 
 <li class="dropdown">
 	<a href="ilustras.html">ILUSTRAÇÕES</a>
@@ -147,77 +275,148 @@ nav ul li a:hover{
 </li>
 
 <li class="dropdown">
+
 	<a href="grafites.html">STREET ART</a>
+
 	<div class="dropdown-content">
-	<a href="grafites.html">GRAFITES</a>
-	<a href="lambe.html">LAMBE-LAMBE</a>
+
+		<a href="grafites.html">GRAFITES</a>
+
+		<a href="lambe.html">LAMBE-LAMBE</a>
+
 	</div>
+
 </li>
 
 <li class="dropdown">
-<a href="hq.html">HQ'S</a>
+	<a href="hq.html">HQ'S</a>
 </li>
 
-<li><a href="produtos.html">PRODUTOS</a></li>
+<li>
+	<a href="produtos.html">PRODUTOS</a>
+</li>
 
 <li class="dropdown">
-<a href="expos.html">SOBRE</a>
-<div class="dropdown-content">
-<a href="expos.html">EXPOSIÇÕES</a>
-<a href="contato.html">CONTATO</a>
-</div>
+
+	<a href="expos.html">SOBRE</a>
+
+	<div class="dropdown-content">
+
+		<a href="expos.html">EXPOSIÇÕES</a>
+
+		<a href="contato.html">CONTATO</a>
+
+	</div>
+
 </li>
 
 </ul>
+
 </nav>
+
 
 <article class="galeria">
 
+
 <div class="artes">
+
 	<img src="imagens/reu.png">
-	<p class="descricao">Grafite - Reunydas — Viradouro - Niterói, RJ — 2026</p>
+
+	<p class="descricao">
+		Grafite - Reunydas — Viradouro - Niterói, RJ — 2026
+	</p>
+
 </div>
-	
+
+
 <div class="artes">
+
 	<img src="imagens/yabas.jpg">
-	<p class="descricao">Live Paint - Quintal das Yabás — Taboão, SP — 2026</p>
+
+	<p class="descricao">
+		Live Paint - Quintal das Yabás — Taboão, SP — 2026
+	</p>
+
 </div>
-	
+
+
 <div class="artes">
+
 	<img src="imagens/e4.jpg">
-	<p class="descricao">Live Paint - C.C Hip Hop Sul — Vila Sao Pedro, SP — 2026</p>
+
+	<p class="descricao">
+		Live Paint - C.C Hip Hop Sul — Vila Sao Pedro, SP — 2026
+	</p>
+
 </div>
 
+
 <div class="artes">
+
 	<img src="imagens/e5.jpg">
-	<p class="descricao">Live Paint - Ocupação 9 de Julho — Bela Vista, SP — 2025</p>
+
+	<p class="descricao">
+		Live Paint - Ocupação 9 de Julho — Bela Vista, SP — 2025
+	</p>
+
 </div>
 
+
 <div class="artes">
+
 	<img src="imagens/reunidas.jpg">
-	<p class="descricao">Live Paint - Niterói — Rio de Janeiro, RJ — 2025</p>
+
+	<p class="descricao">
+		Live Paint - Niterói — Rio de Janeiro, RJ — 2025
+	</p>
+
 </div>
 
+
 <div class="artes">
+
 	<img src="imagens/e3.jpg">
-	<p class="descricao">Exposição - Hacker Hostel — Paraíso, SP — 2025</p>
+
+	<p class="descricao">
+		Exposição - Hacker Hostel — Paraíso, SP — 2025
+	</p>
+
 </div>
 
-<div class="artes">
-<img src="imagens/e2.jpg">
-<p class="descricao">Exposição - Largo da Misericórdia — Sé, SP — 2024</p>
-</div>
 
 <div class="artes">
+
+	<img src="imagens/e2.jpg">
+
+	<p class="descricao">
+		Exposição - Largo da Misericórdia — Sé, SP — 2024
+	</p>
+
+</div>
+
+
+<div class="artes">
+
 	<img src="imagens/e1.jpg">
-	<p class="descricao">Exposição - Presidenta Bar — Consolação, SP — 2024</p>
+
+	<p class="descricao">
+		Exposição - Presidenta Bar — Consolação, SP — 2024
+	</p>
+
 </div>
+
 
 </article>
 
+
 <footer>
-<p>© 2026 Naga's Club — Apoie artistas independentes.</p>
+
+	<p>
+		© 2026 Naga's Club — Apoie artistas independentes.
+	</p>
+
 </footer>
+
 
 </body>
 </html>
