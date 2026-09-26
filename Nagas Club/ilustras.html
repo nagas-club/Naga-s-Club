@@ -1,14 +1,19 @@
+```html
 <!DOCTYPE html>
 
-<html>
+<html lang="pt-br">
+
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Naga's Club</title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -30,11 +35,19 @@ body{
 }
 
 
+/* =========================
+   HEADER
+   ========================= */
+
 header img{
 	width:100%;
 	display:block;
 }
 
+
+/* =========================
+   MENU
+   ========================= */
 
 nav{
 	width:100%;
@@ -69,6 +82,10 @@ nav ul li a:hover{
 	background:#111;
 }
 
+
+/* =========================
+   SUBMENU
+   ========================= */
 
 .dropdown-content{
 	display:none;
@@ -114,6 +131,7 @@ nav ul li a:hover{
 	width:100%;
 	aspect-ratio:1/1;
 	overflow:hidden;
+	cursor:pointer;
 }
 
 
@@ -133,16 +151,191 @@ nav ul li a:hover{
 
 
 /* =========================
+   MODAL
+   ========================= */
+
+.modal-obra{
+
+	display:none;
+
+	position:fixed;
+
+	z-index:9999;
+
+	left:0;
+	top:0;
+
+	width:100%;
+	height:100%;
+
+	background:rgba(0,0,0,0.90);
+
+	overflow:auto;
+
+	padding:40px;
+
+}
+
+
+/* Caixa central */
+
+.modal-conteudo{
+
+	position:relative;
+
+	width:90%;
+
+	max-width:1200px;
+
+	margin:0 auto;
+
+	background:#333;
+
+	display:flex;
+
+	align-items:stretch;
+
+	box-shadow:0 0 30px rgba(0,0,0,0.8);
+
+}
+
+
+/* Imagem */
+
+.modal-imagem{
+
+	width:65%;
+
+	background:#111;
+
+	display:flex;
+
+	align-items:center;
+
+	justify-content:center;
+
+	padding:20px;
+
+}
+
+
+.modal-imagem img{
+
+	max-width:100%;
+
+	max-height:80vh;
+
+	width:auto;
+
+	height:auto;
+
+	display:block;
+
+}
+
+
+/* Informações */
+
+.modal-info{
+
+	width:35%;
+
+	background:#891c33;
+
+	color:white;
+
+	padding:35px 25px;
+
+	font-family:Montserrat;
+
+}
+
+
+.modal-info h2{
+
+	font-family:Verdana;
+
+	font-size:30px;
+
+	margin-bottom:25px;
+
+	color:white;
+
+}
+
+
+.modal-info p{
+
+	font-family:Montserrat;
+
+	font-size:15px;
+
+	line-height:1.6;
+
+	color:white;
+
+	padding:0;
+
+}
+
+
+/* Botão fechar */
+
+.fechar{
+
+	position:absolute;
+
+	right:15px;
+
+	top:10px;
+
+	z-index:10;
+
+	font-size:35px;
+
+	color:white;
+
+	cursor:pointer;
+
+	font-family:Arial;
+
+	line-height:1;
+
+}
+
+
+.fechar:hover{
+
+	color:#aa6a85;
+
+}
+
+
+/* =========================
    RODAPÉ
    ========================= */
 
 footer{
+
 	background:#891c33;
+
 	color:white;
+
 	text-align:center;
+
 	padding:15px;
+
 	font-family:Montserrat;
+
 	margin-top:40px;
+
+}
+
+
+footer p{
+
+	color:white;
+
 }
 
 
@@ -153,78 +346,185 @@ footer{
 @media (max-width:768px){
 
 	body{
+
 		margin-left:3%;
+
 		margin-right:3%;
+
 	}
 
 
 	/* MENU */
 
 	nav ul{
+
 		display:flex;
+
 		flex-direction:column;
+
 	}
 
 
 	nav ul li{
+
 		width:100%;
+
 	}
 
 
 	nav ul li a{
+
 		text-align:center;
+
 		padding:12px;
+
 	}
 
 
 	/* SUBMENUS */
 
 	.dropdown-content{
+
 		position:static;
+
 		width:100%;
+
 		min-width:0;
+
 	}
 
 
 	.dropdown:hover .dropdown-content{
+
 		display:block;
+
 	}
 
 
 	/* GALERIA */
 
 	.galeria{
+
 		margin-top:20px;
+
 		grid-template-columns:repeat(2,1fr);
+
 		gap:10px;
+
 	}
 
 
 	.artes{
+
 		width:100%;
+
 		aspect-ratio:1/1;
+
 	}
 
 
 	/* No celular não usamos zoom */
-	
+
 	.artes:hover img{
+
 		transform:none;
+
 		filter:none;
+
+	}
+
+
+	/* =========================
+	   MODAL CELULAR
+	   ========================= */
+
+	.modal-obra{
+
+		padding:20px 10px;
+
+	}
+
+
+	.modal-conteudo{
+
+		width:100%;
+
+		display:block;
+
+	}
+
+
+	.modal-imagem{
+
+		width:100%;
+
+		padding:10px;
+
+	}
+
+
+	.modal-imagem img{
+
+		max-width:100%;
+
+		max-height:65vh;
+
+	}
+
+
+	.modal-info{
+
+		width:100%;
+
+		padding:25px 20px;
+
+	}
+
+
+	.modal-info h2{
+
+		font-size:24px;
+
+		margin-bottom:15px;
+
+	}
+
+
+	.modal-info p{
+
+		font-size:14px;
+
+	}
+
+
+	.fechar{
+
+		right:10px;
+
+		top:5px;
+
+		font-size:30px;
+
 	}
 
 
 	/* RODAPÉ */
 
 	footer{
+
 		margin-top:25px;
+
 	}
 
 
 	footer p{
+
 		font-size:12px;
+
 		line-height:1.4;
+
 		padding:0 5px;
+
 	}
 
 }
@@ -237,6 +537,10 @@ footer{
 <body>
 
 
+<!-- =========================
+     HEADER
+     ========================= -->
+
 <header>
 
 	<img src="imagens/banner colorido.gif">
@@ -244,6 +548,10 @@ footer{
 </header>
 
 
+
+<!-- =========================
+     MENU
+     ========================= -->
 
 <nav>
 
@@ -258,7 +566,7 @@ footer{
 
 
 
-<li class="dropdown">
+<li>
 
 	<a href="ilustras.html">ILUSTRAÇÕES</a>
 
@@ -266,10 +574,9 @@ footer{
 
 
 
-<li class="dropdown">
+<li>
 
 	<a href="animas.html">ANIMAÇÕES</a>
-
 
 </li>
 
@@ -291,7 +598,7 @@ footer{
 
 
 
-<li class="dropdown">
+<li>
 
 	<a href="hq.html">HQ'S</a>
 
@@ -328,300 +635,490 @@ footer{
 
 
 
+<!-- =========================
+     GALERIA
+     ========================= -->
+
 <article class="galeria">
 
-<div class="artes">
+
+<div class="artes"
+     onclick="abrirObra('imagens/xmen1.jpg', 'X-Men', 'Ilustração autoral inspirada no universo dos X-Men.')">
+
 	<img src="imagens/xmen1.jpg">
+
 </div>
-	
-<div class="artes">
+
+
+<div class="artes"
+     onclick="abrirObra('imagens/msg.jpg', 'Mensagem', 'Ilustração autoral. Aqui você pode colocar informações sobre o processo, conceito ou técnica.')">
+
 	<img src="imagens/msg.jpg">
+
 </div>
 
-<div class="artes">
+
+<div class="artes"
+     onclick="abrirObra('imagens/senac1.png', 'Projeto Senac 01', 'Projeto desenvolvido durante o curso Técnico em Multimídia no Senac.')">
+
 	<img src="imagens/senac1.png">
+
 </div>
 
-<div class="artes">
+
+<div class="artes"
+     onclick="abrirObra('imagens/senac2.png', 'Projeto Senac 02', 'Projeto desenvolvido durante o curso Técnico em Multimídia no Senac.')">
+
 	<img src="imagens/senac2.png">
+
 </div>
 
-<div class="artes">
+
+<div class="artes"
+     onclick="abrirObra('imagens/poster um lugar seguro.png', 'Um Lugar Seguro', 'Pôster desenvolvido para o projeto audiovisual Um Lugar Seguro.')">
+
 	<img src="imagens/poster um lugar seguro.png">
+
 </div>
 
-<div class="artes">
+
+<div class="artes"
+     onclick="abrirObra('imagens/killah.jpg', 'Killah', 'Ilustração autoral.')">
+
 	<img src="imagens/killah.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/mia.png', 'Mia', 'Ilustração autoral.')">
+
 	<img src="imagens/mia.png">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a1.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a1.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a4.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a4.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a01.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a01.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/Pretty when I cry.jpg', 'Pretty When I Cry', 'Ilustração autoral.')">
+
 	<img src="imagens/Pretty when I cry.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/myagg.png', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/myagg.png">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/kall.jpg', 'Kall', 'Ilustração autoral.')">
+
 	<img src="imagens/kall.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/pearl.jpg', 'Pearl', 'Ilustração autoral.')">
+
 	<img src="imagens/pearl.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/elvira.jpg', 'Elvira', 'Ilustração autoral.')">
+
 	<img src="imagens/elvira.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/tiff.jpg', 'Tiff', 'Ilustração autoral.')">
+
 	<img src="imagens/tiff.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/Nagaz Bomb.png', 'Nagaz Bomb', 'Ilustração autoral.')">
+
 	<img src="imagens/Nagaz Bomb.png">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/profile.jpg', 'Profile', 'Ilustração autoral.')">
+
 	<img src="imagens/profile.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/001.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/001.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a9.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a9.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a017.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a017.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/brx.jpg', 'BRX', 'Ilustração autoral.')">
+
 	<img src="imagens/brx.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/0.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/0.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/1.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/1.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/venus.jpg', 'Venus', 'Ilustração autoral.')">
+
 	<img src="imagens/venus.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/gato.jpg', 'Gato', 'Ilustração autoral.')">
+
 	<img src="imagens/gato.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a10.png', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a10.png">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a02.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a02.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/lambe.jpg', 'Lambe', 'Arte urbana / lambe-lambe.')">
+
 	<img src="imagens/lambe.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/2.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/2.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a2.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a2.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/freira.jpg', 'Freira', 'Ilustração autoral.')">
+
 	<img src="imagens/freira.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/ks.jpg', 'KS', 'Ilustração autoral.')">
+
 	<img src="imagens/ks.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/3.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/3.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/bisnaga.jpg', 'Bisnaga', 'Ilustração autoral.')">
+
 	<img src="imagens/bisnaga.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/wallbee.jpg', 'Wallbee', 'Ilustração autoral.')">
+
 	<img src="imagens/wallbee.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a6.jpeg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a6.jpeg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/gat.jpg', 'Gat', 'Ilustração autoral.')">
+
 	<img src="imagens/gat.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/4.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/4.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a04.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a04.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a3.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a3.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/5.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/5.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/jessica.jpg', 'Jessica', 'Ilustração autoral.')">
+
 	<img src="imagens/jessica.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a05.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a05.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a03.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a03.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/BoomBeat 2.jpg', 'BoomBeat', 'Ilustração autoral.')">
+
 	<img src="imagens/BoomBeat 2.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/00.png', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/00.png">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/Gemini Doll.jpg', 'Gemini Doll', 'Ilustração autoral.')">
+
 	<img src="imagens/Gemini Doll.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a06.jpeg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a06.jpeg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a5.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a5.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a07.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a07.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a011.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a011.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/skate.jpg', 'Skate', 'Ilustração autoral.')">
+
 	<img src="imagens/skate.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a010.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a010.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a08.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a08.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a7.jpeg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a7.jpeg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/caramusa.jpg', 'Caramusa', 'Ilustração autoral.')">
+
 	<img src="imagens/caramusa.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a8.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a8.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/a016.jpg', 'Obra', 'Ilustração autoral.')">
+
 	<img src="imagens/a016.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+     onclick="abrirObra('imagens/bath.jpg', 'Bath', 'Ilustração autoral.')">
+
 	<img src="imagens/bath.jpg">
+
 </div>
 
 
@@ -629,12 +1126,143 @@ footer{
 
 
 
+<!-- =========================
+     MODAL
+     ========================= -->
+
+<div id="modalObra"
+     class="modal-obra"
+     onclick="fecharFora(event)">
+
+
+	<div class="modal-conteudo">
+
+
+		<!-- BOTÃO FECHAR -->
+
+		<span class="fechar"
+		      onclick="fecharObra()">
+
+			&times;
+
+		</span>
+
+
+		<!-- IMAGEM -->
+
+		<div class="modal-imagem">
+
+			<img id="imagemModal"
+			     src=""
+			     alt="">
+
+		</div>
+
+
+		<!-- INFORMAÇÕES -->
+
+		<div class="modal-info">
+
+			<h2 id="tituloModal">
+				Título da obra
+			</h2>
+
+			<p id="textoModal">
+				Informações sobre a obra.
+			</p>
+
+		</div>
+
+
+	</div>
+
+</div>
+
+
+
+<!-- =========================
+     RODAPÉ
+     ========================= -->
+
 <footer>
 
-<p>© 2026 Naga's Club — Apoie artistas independentes.</p>
+<p>
+	© 2026 Naga's Club — Apoie artistas independentes.
+</p>
 
 </footer>
 
 
+
+<script>
+
+/* =========================
+   ABRIR OBRA
+   ========================= */
+
+function abrirObra(imagem, titulo, descricao){
+
+	document.getElementById("imagemModal").src = imagem;
+
+	document.getElementById("imagemModal").alt = titulo;
+
+	document.getElementById("tituloModal").innerText = titulo;
+
+	document.getElementById("textoModal").innerText = descricao;
+
+	document.getElementById("modalObra").style.display = "flex";
+
+	document.body.style.overflow = "hidden";
+
+}
+
+
+/* =========================
+   FECHAR OBRA
+   ========================= */
+
+function fecharObra(){
+
+	document.getElementById("modalObra").style.display = "none";
+
+	document.body.style.overflow = "auto";
+
+}
+
+
+/* =========================
+   FECHAR CLICANDO FORA
+   ========================= */
+
+function fecharFora(event){
+
+	if(event.target === document.getElementById("modalObra")){
+
+		fecharObra();
+
+	}
+
+}
+
+
+/* =========================
+   FECHAR COM ESC
+   ========================= */
+
+document.addEventListener("keydown", function(event){
+
+	if(event.key === "Escape"){
+
+		fecharObra();
+
+	}
+
+});
+
+</script>
+
+
 </body>
+
 </html>
+```
