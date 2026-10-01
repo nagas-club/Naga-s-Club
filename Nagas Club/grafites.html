@@ -1,15 +1,20 @@
+```html
 <!DOCTYPE html>
 
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Naga's Club</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 <style>
 
@@ -24,14 +29,20 @@ body{
 	margin-right:5%;
 }
 
-/* BANNER */
+
+/* =========================
+   BANNER
+   ========================= */
 
 header img{
 	width:100%;
 	display:block;
 }
 
-/* MENU */
+
+/* =========================
+   MENU
+   ========================= */
 
 nav{
 	width:100%;
@@ -62,7 +73,10 @@ nav ul li a:hover{
 	background:#111;
 }
 
-/* SUBMENU */
+
+/* =========================
+   SUBMENU
+   ========================= */
 
 .dropdown-content{
 	display:none;
@@ -87,7 +101,10 @@ nav ul li a:hover{
 	display:block;
 }
 
-/* GALERIA */
+
+/* =========================
+   GALERIA
+   ========================= */
 
 .galeria{
 	margin-top:40px;
@@ -97,13 +114,16 @@ nav ul li a:hover{
 }
 
 .artes{
+	position:relative;
 	width:100%;
+	aspect-ratio:1/1;
 	overflow:hidden;
+	cursor:pointer;
 }
 
 .artes img{
 	width:100%;
-	aspect-ratio:1/1;
+	height:100%;
 	object-fit:cover;
 	display:block;
 	transition:transform 0.4s;
@@ -114,29 +134,185 @@ nav ul li a:hover{
 	filter:brightness(70%);
 }
 
-/* DESCRIÇÃO */
 
-.descricao{
-	font-family:Montserrat;
-	font-size:13px;
-	text-align:center;
-	margin-top:8px;
-	padding:6px;
-	background:#f5f5f5;
-	border:1px solid #ccc;
-	border-radius:4px;
-	line-height:1.4;
+/* =========================
+   MODAL
+   ========================= */
+
+.modal-obra{
+
+	display:none;
+
+	position:fixed;
+
+	z-index:9999;
+
+	left:0;
+	top:0;
+
+	width:100%;
+	height:100%;
+
+	background:rgba(0,0,0,0.90);
+
+	overflow:auto;
+
+	padding:40px;
+
 }
 
-/* FOOTER */
+
+/* Caixa central */
+
+.modal-conteudo{
+
+	position:relative;
+
+	width:90%;
+
+	max-width:1200px;
+
+	margin:0 auto;
+
+	background:#333;
+
+	display:flex;
+
+	align-items:stretch;
+
+	box-shadow:0 0 30px rgba(0,0,0,0.8);
+
+}
+
+
+/* Imagem */
+
+.modal-imagem{
+
+	width:65%;
+
+	background:#111;
+
+	display:flex;
+
+	align-items:center;
+
+	justify-content:center;
+
+	padding:20px;
+
+}
+
+
+.modal-imagem img{
+
+	max-width:100%;
+
+	max-height:80vh;
+
+	width:auto;
+
+	height:auto;
+
+	display:block;
+
+}
+
+
+/* Informações */
+
+.modal-info{
+
+	width:35%;
+
+	background:#891c33;
+
+	color:white;
+
+	padding:35px 25px;
+
+	font-family:Montserrat;
+
+}
+
+
+.modal-info h2{
+
+	font-family:Verdana;
+
+	font-size:30px;
+
+	margin-bottom:25px;
+
+	color:white;
+
+}
+
+
+.modal-info p{
+
+	font-family:Montserrat;
+
+	font-size:15px;
+
+	line-height:1.6;
+
+	color:white;
+
+	padding:0;
+
+}
+
+
+/* Botão fechar */
+
+.fechar{
+
+	position:absolute;
+
+	right:15px;
+
+	top:10px;
+
+	z-index:10;
+
+	font-size:35px;
+
+	color:white;
+
+	cursor:pointer;
+
+	font-family:Arial;
+
+	line-height:1;
+
+}
+
+.fechar:hover{
+
+	color:#aa6a85;
+
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
 
 footer{
+
 	background:#891c33;
+
 	color:white;
+
 	text-align:center;
+
 	padding:15px;
+
 	font-family:Montserrat;
+
 	margin-top:40px;
+
 }
 
 
@@ -146,100 +322,191 @@ footer{
 
 @media (max-width:768px){
 
-	/* Espaçamento lateral menor */
-
 	body{
+
 		margin-left:3%;
+
 		margin-right:3%;
+
 	}
 
-	/* BANNER */
 
-	header img{
-		width:100%;
-		height:auto;
-	}
-
-	/* MENU VERTICAL */
-
-	nav{
-		margin-top:8px;
-	}
+	/* MENU */
 
 	nav ul{
+
 		display:flex;
+
 		flex-direction:column;
-		width:100%;
+
 	}
 
 	nav ul li{
+
 		width:100%;
+
 	}
 
 	nav ul li a{
+
 		width:100%;
+
 		text-align:center;
+
 		padding:12px 10px;
+
 		font-size:13px;
+
 	}
 
-	/* SUBMENU NO CELULAR */
+
+	/* SUBMENU */
 
 	.dropdown-content{
+
 		position:static;
+
 		width:100%;
+
 		min-width:0;
+
 	}
 
 	.dropdown-content a{
+
 		padding:10px;
+
 		font-size:12px;
+
 		text-align:center;
+
 	}
+
+	.dropdown:hover .dropdown-content{
+
+		display:block;
+
+	}
+
 
 	/* GALERIA */
 
 	.galeria{
+
 		margin-top:25px;
+
 		grid-template-columns:repeat(2,1fr);
+
 		gap:10px;
+
 	}
 
 	.artes{
-		width:100%;
-	}
 
-	.artes img{
 		width:100%;
+
 		aspect-ratio:1/1;
-		object-fit:cover;
-		transform:none;
-		filter:none;
+
 	}
 
-	/* DESCRIÇÃO */
 
-	.descricao{
-		font-size:11px;
-		padding:6px 4px;
-		margin-top:5px;
-		line-height:1.3;
-	}
-
-	/* Remove o efeito de zoom no celular */
+	/* Sem zoom no celular */
 
 	.artes:hover img{
+
 		transform:none;
+
 		filter:none;
+
 	}
+
+
+	/* =========================
+	   MODAL CELULAR
+	   ========================= */
+
+	.modal-obra{
+
+		padding:20px 10px;
+
+	}
+
+
+	.modal-conteudo{
+
+		width:100%;
+
+		display:block;
+
+	}
+
+
+	.modal-imagem{
+
+		width:100%;
+
+		padding:10px;
+
+	}
+
+
+	.modal-imagem img{
+
+		max-width:100%;
+
+		max-height:65vh;
+
+	}
+
+
+	.modal-info{
+
+		width:100%;
+
+		padding:25px 20px;
+
+	}
+
+
+	.modal-info h2{
+
+		font-size:24px;
+
+		margin-bottom:15px;
+
+	}
+
+
+	.modal-info p{
+
+		font-size:14px;
+
+	}
+
+
+	.fechar{
+
+		right:10px;
+
+		top:5px;
+
+		font-size:30px;
+
+	}
+
 
 	/* FOOTER */
 
 	footer{
+
 		margin-top:25px;
+
 		padding:12px 8px;
+
 		font-size:11px;
+
 		line-height:1.4;
+
 	}
 
 }
@@ -251,8 +518,11 @@ footer{
 
 <body>
 
+
 <header>
+
 	<img src="imagens/banner colorido.gif">
+
 </header>
 
 
@@ -264,13 +534,14 @@ footer{
 	<a href="index.html">HOME</a>
 </li>
 
-<li class="dropdown">
+<li>
 	<a href="ilustras.html">ILUSTRAÇÕES</a>
 </li>
 
-<li class="dropdown">
+<li>
 	<a href="animas.html">ANIMAÇÕES</a>
 </li>
+
 
 <li class="dropdown">
 
@@ -286,15 +557,18 @@ footer{
 
 </li>
 
+
 <li class="dropdown">
 
 	<a href="hq.html">HQ'S</a>
 
 </li>
 
+
 <li>
 	<a href="produtos.html">PRODUTOS</a>
 </li>
+
 
 <li class="dropdown">
 
@@ -315,162 +589,179 @@ footer{
 </nav>
 
 
+<!-- =========================
+     GALERIA
+     ========================= -->
+
 <article class="galeria">
 
-<div class="artes">
+
+<div class="artes"
+onclick="abrirObra('imagens/kalironinaga.jpeg', 'Reúnidas', 'Viradouro — Niterói, RJ — 2026.')">
 
 	<img src="imagens/kalironinaga.jpeg">
 
-	<p class="descricao">
-		Reúnidas — Viradouro -Niteroi, RJ — 2026
-	</p>
-
 </div>
 
-<div class="artes">
+
+<div class="artes"
+onclick="abrirObra('imagens/g1.jpg', 'Bar do Don', 'República — São Paulo, SP — 2024.')">
 
 	<img src="imagens/g1.jpg">
 
-	<p class="descricao">
-		Bar do Don — República, SP — 2024
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/fdfd.jpg', 'Jd São Paulo', 'Jardim São Paulo — São Paulo, SP — 2024.')">
 
 	<img src="imagens/fdfd.jpg">
 
-	<p class="descricao">
-		Jd São Paulo — São Paulo, SP — 2024
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g2.jpg', 'Jd Jaqueline', 'Vila Sônia — São Paulo, SP — 2024.')">
 
 	<img src="imagens/g2.jpg">
 
-	<p class="descricao">
-		Jd Jaqueline — Vila Sônia, SP — 2024
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g3.jpg', 'Jabaquara', 'Jabaquara — São Paulo, SP — 2024.')">
 
 	<img src="imagens/g3.jpg">
 
-	<p class="descricao">
-		Jabaquara — São Paulo, SP — 2024
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g4.jpg', 'Capão Redondo', 'Capão Redondo — São Paulo, SP — 2025.')">
 
 	<img src="imagens/g4.jpg">
 
-	<p class="descricao">
-		Capão Redondo — São Paulo, SP — 2025
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g5.jpg', 'Jd Comercial', 'Jardim Comercial — Capão Redondo, SP — 2025.')">
 
 	<img src="imagens/g5.jpg">
 
-	<p class="descricao">
-		Jd Comercial — Capão Redondo, SP — 2025
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g6.jpg', 'Jd Peri', 'Jardim Peri — Zona Norte, SP — 2023.')">
 
 	<img src="imagens/g6.jpg">
 
-	<p class="descricao">
-		Jd Peri — Zona Norte, SP — 2023
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g7.jpeg', 'Capão Redondo', 'Capão Redondo — São Paulo, SP — 2025.')">
 
 	<img src="imagens/g7.jpeg">
 
-	<p class="descricao">
-		Capão Redondo — São Paulo, SP — 2025
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g8.jpeg', 'Niterói', 'Niterói — Rio de Janeiro, RJ — 2025.')">
 
 	<img src="imagens/g8.jpeg">
 
-	<p class="descricao">
-		Niteroi — Rio de Janeiro, RJ — 2025
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g13.jpg', 'Niterói', 'Niterói — Rio de Janeiro, RJ — 2025.')">
 
 	<img src="imagens/g13.jpg">
 
-	<p class="descricao">
-		Niteroi — Rio de Janeiro, RJ — 2025
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g9.jpeg', 'Capão Redondo', 'Capão Redondo — São Paulo, SP — 2025.')">
 
 	<img src="imagens/g9.jpeg">
 
-	<p class="descricao">
-		Capão Redondo — São Paulo, SP — 2025
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g10.jpeg', 'Varginha', 'Varginha — São Paulo, SP — 2026.')">
 
 	<img src="imagens/g10.jpeg">
 
-	<p class="descricao">
-		Varginha — São Paulo, SP — 2026
-	</p>
-
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/g12.jpg', 'São Paulo', 'São Paulo, SP — 2023.')">
 
 	<img src="imagens/g12.jpg">
-
-	<p class="descricao">
-		São Paulo, SP — 2023
-	</p>
 
 </div>
 
 
 </article>
+
+
+<!-- =========================
+     MODAL
+     ========================= -->
+
+<div id="modalObra"
+class="modal-obra"
+onclick="fecharFora(event)">
+
+
+	<div class="modal-conteudo">
+
+
+		<!-- BOTÃO FECHAR -->
+
+		<span class="fechar"
+		onclick="fecharObra()">
+
+			&times;
+
+		</span>
+
+
+		<!-- IMAGEM -->
+
+		<div class="modal-imagem">
+
+			<img id="imagemModal"
+			src=""
+			alt="">
+
+		</div>
+
+
+		<!-- INFORMAÇÕES -->
+
+		<div class="modal-info">
+
+			<h2 id="tituloModal">
+				Título da obra
+			</h2>
+
+			<p id="textoModal">
+				Informações sobre a obra.
+			</p>
+
+		</div>
+
+
+	</div>
+
+</div>
 
 
 <footer>
@@ -482,5 +773,75 @@ footer{
 </footer>
 
 
+<script>
+
+
+/* =========================
+   ABRIR OBRA
+   ========================= */
+
+function abrirObra(imagem, titulo, descricao){
+
+	document.getElementById("imagemModal").src = imagem;
+
+	document.getElementById("imagemModal").alt = titulo;
+
+	document.getElementById("tituloModal").innerText = titulo;
+
+	document.getElementById("textoModal").innerText = descricao;
+
+	document.getElementById("modalObra").style.display = "flex";
+
+	document.body.style.overflow = "hidden";
+
+}
+
+
+/* =========================
+   FECHAR OBRA
+   ========================= */
+
+function fecharObra(){
+
+	document.getElementById("modalObra").style.display = "none";
+
+	document.body.style.overflow = "auto";
+
+}
+
+
+/* =========================
+   FECHAR CLICANDO FORA
+   ========================= */
+
+function fecharFora(event){
+
+	if(event.target === document.getElementById("modalObra")){
+
+		fecharObra();
+
+	}
+
+}
+
+
+/* =========================
+   FECHAR COM ESC
+   ========================= */
+
+document.addEventListener("keydown", function(event){
+
+	if(event.key === "Escape"){
+
+		fecharObra();
+
+	}
+
+});
+
+</script>
+
+
 </body>
 </html>
+```
