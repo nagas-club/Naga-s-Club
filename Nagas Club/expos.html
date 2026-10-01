@@ -25,14 +25,19 @@ body{
 	margin-right:5%;
 }
 
-/* BANNER */
+/* ================================
+   BANNER
+================================ */
 
 header img{
 	width:100%;
 	display:block;
 }
 
-/* MENU */
+
+/* ================================
+   MENU
+================================ */
 
 nav{
 	width:100%;
@@ -63,7 +68,10 @@ nav ul li a:hover{
 	background:#111;
 }
 
-/* SUBMENU */
+
+/* ================================
+   SUBMENU
+================================ */
 
 .dropdown-content{
 	display:none;
@@ -88,7 +96,10 @@ nav ul li a:hover{
 	display:block;
 }
 
-/* GALERIA */
+
+/* ================================
+   GALERIA
+================================ */
 
 .galeria{
 	margin-top:40px;
@@ -116,23 +127,10 @@ nav ul li a:hover{
 	filter:brightness(70%);
 }
 
-/* DESCRIÇÃO */
 
-.descricao{
-	font-family:Montserrat;
-	font-size:13px;
-	text-align:center;
-	margin-top:8px;
-	padding:6px;
-	background:#f5f5f5;
-	border:1px solid #ccc;
-	border-radius:4px;
-	line-height:1.4;
-}
-
-/* =========================================
+/* ================================
    MODAL
-   ========================================= */
+================================ */
 
 .modal-obra{
 	display:none;
@@ -197,7 +195,10 @@ nav ul li a:hover{
 	line-height:1.6;
 }
 
-/* BOTÃO FECHAR */
+
+/* ================================
+   BOTÃO FECHAR
+================================ */
 
 .fechar-modal{
 	position:absolute;
@@ -215,9 +216,24 @@ nav ul li a:hover{
 	color:#891c33;
 }
 
-/* =========================================
+
+/* ================================
+   FOOTER
+================================ */
+
+footer{
+	background:#891c33;
+	color:white;
+	text-align:center;
+	padding:15px;
+	font-family:Montserrat;
+	margin-top:40px;
+}
+
+
+/* ================================
    CELULAR
-   ========================================= */
+================================ */
 
 @media (max-width:768px){
 
@@ -226,12 +242,14 @@ nav ul li a:hover{
 		margin-right:3%;
 	}
 
+
 	/* BANNER */
 
 	header img{
 		width:100%;
 		height:auto;
 	}
+
 
 	/* MENU VERTICAL */
 
@@ -256,6 +274,7 @@ nav ul li a:hover{
 		font-size:13px;
 	}
 
+
 	/* SUBMENU */
 
 	.dropdown-content{
@@ -269,6 +288,7 @@ nav ul li a:hover{
 		font-size:12px;
 		text-align:center;
 	}
+
 
 	/* GALERIA */
 
@@ -295,14 +315,6 @@ nav ul li a:hover{
 		filter:none;
 	}
 
-	/* DESCRIÇÃO */
-
-	.descricao{
-		font-size:11px;
-		padding:6px 4px;
-		margin-top:5px;
-		line-height:1.3;
-	}
 
 	/* MODAL */
 
@@ -344,11 +356,15 @@ nav ul li a:hover{
 		line-height:1.5;
 	}
 
+
+	/* BOTÃO FECHAR */
+
 	.fechar-modal{
 		top:8px;
 		right:15px;
 		font-size:32px;
 	}
+
 
 	/* FOOTER */
 
@@ -359,17 +375,6 @@ nav ul li a:hover{
 		line-height:1.4;
 	}
 
-}
-
-/* FOOTER */
-
-footer{
-	background:#891c33;
-	color:white;
-	text-align:center;
-	padding:15px;
-	font-family:Montserrat;
-	margin-top:40px;
 }
 
 </style>
@@ -395,13 +400,16 @@ footer{
 	<a href="index.html">HOME</a>
 </li>
 
+
 <li class="dropdown">
 	<a href="ilustras.html">ILUSTRAÇÕES</a>
 </li>
 
+
 <li class="dropdown">
 	<a href="animas.html">ANIMAÇÕES</a>
 </li>
+
 
 <li class="dropdown">
 
@@ -417,13 +425,16 @@ footer{
 
 </li>
 
+
 <li class="dropdown">
 	<a href="hq.html">HQ'S</a>
 </li>
 
+
 <li>
 	<a href="produtos.html">PRODUTOS</a>
 </li>
+
 
 <li class="dropdown">
 
@@ -444,101 +455,105 @@ footer{
 </nav>
 
 
+<!-- ================================
+     GALERIA
+================================ -->
+
 <article class="galeria">
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/reu.png','Reunydas','Grafite — Viradouro, Niterói, RJ — 2026')">
+	onclick="abrirObra(
+	'imagens/reu.png',
+	'Reunydas',
+	'Grafite — Viradouro, Niterói, RJ — 2026'
+	)">
 
 	<img src="imagens/reu.png">
 
-	<p class="descricao">
-		Grafite - Reunydas — Viradouro - Niterói, RJ — 2026
-	</p>
-
 </div>
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/yabas.jpg','Quintal das Yabás','Live Paint — Taboão, SP — 2026')">
+	onclick="abrirObra(
+	'imagens/yabas.jpg',
+	'Quintal das Yabás',
+	'Live Paint — Taboão, SP — 2026'
+	)">
 
 	<img src="imagens/yabas.jpg">
 
-	<p class="descricao">
-		Live Paint - Quintal das Yabás — Taboão, SP — 2026
-	</p>
-
 </div>
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/e4.jpg','C.C Hip Hop Sul','Live Paint — Vila São Pedro, SP — 2026')">
+	onclick="abrirObra(
+	'imagens/e4.jpg',
+	'C.C Hip Hop Sul',
+	'Live Paint — Vila São Pedro, SP — 2026'
+	)">
 
 	<img src="imagens/e4.jpg">
 
-	<p class="descricao">
-		Live Paint - C.C Hip Hop Sul — Vila Sao Pedro, SP — 2026
-	</p>
-
 </div>
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/e5.jpg','Ocupação 9 de Julho','Live Paint — Bela Vista, SP — 2025')">
+	onclick="abrirObra(
+	'imagens/e5.jpg',
+	'Ocupação 9 de Julho',
+	'Live Paint — Bela Vista, SP — 2025'
+	)">
 
 	<img src="imagens/e5.jpg">
 
-	<p class="descricao">
-		Live Paint - Ocupação 9 de Julho — Bela Vista, SP — 2025
-	</p>
-
 </div>
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/reunidas.jpg','Live Paint — Niterói','Niterói — Rio de Janeiro, RJ — 2025')">
+	onclick="abrirObra(
+	'imagens/reunidas.jpg',
+	'Live Paint — Niterói',
+	'Niterói — Rio de Janeiro, RJ — 2025'
+	)">
 
 	<img src="imagens/reunidas.jpg">
 
-	<p class="descricao">
-		Live Paint - Niterói — Rio de Janeiro, RJ — 2025
-	</p>
-
 </div>
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/e3.jpg','Hacker Hostel','Exposição — Paraíso, SP — 2025')">
+	onclick="abrirObra(
+	'imagens/e3.jpg',
+	'Hacker Hostel',
+	'Exposição — Paraíso, SP — 2025'
+	)">
 
 	<img src="imagens/e3.jpg">
 
-	<p class="descricao">
-		Exposição - Hacker Hostel — Paraíso, SP — 2025
-	</p>
-
 </div>
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/e2.jpg','Largo da Misericórdia','Exposição — Sé, SP — 2024')">
+	onclick="abrirObra(
+	'imagens/e2.jpg',
+	'Largo da Misericórdia',
+	'Exposição — Sé, SP — 2024'
+	)">
 
 	<img src="imagens/e2.jpg">
 
-	<p class="descricao">
-		Exposição - Largo da Misericórdia — Sé, SP — 2024
-	</p>
-
 </div>
 
 
 <div class="artes"
-	onclick="abrirObra('imagens/e1.jpg','Presidenta Bar','Exposição — Consolação, SP — 2024')">
+	onclick="abrirObra(
+	'imagens/e1.jpg',
+	'Presidenta Bar',
+	'Exposição — Consolação, SP — 2024'
+	)">
 
 	<img src="imagens/e1.jpg">
-
-	<p class="descricao">
-		Exposição - Presidenta Bar — Consolação, SP — 2024
-	</p>
 
 </div>
 
@@ -546,24 +561,36 @@ footer{
 </article>
 
 
-<!-- =========================================
+<!-- ================================
      MODAL
-     ========================================= -->
+================================ -->
 
 <div id="modalObra"
 	class="modal-obra"
 	onclick="fecharFora(event)">
 
+
 	<span class="fechar-modal"
-		onclick="fecharObra()">&times;</span>
+		onclick="fecharObra()">
+
+		&times;
+
+	</span>
+
 
 	<div class="modal-conteudo">
 
+
 		<div class="modal-imagem">
 
-			<img id="imagemModal" src="" alt="">
+			<img
+				id="imagemModal"
+				src=""
+				alt=""
+			>
 
 		</div>
+
 
 		<div class="modal-info">
 
@@ -573,10 +600,16 @@ footer{
 
 		</div>
 
+
 	</div>
+
 
 </div>
 
+
+<!-- ================================
+     FOOTER
+================================ -->
 
 <footer>
 
@@ -589,7 +622,9 @@ footer{
 
 <script>
 
-/* ABRIR MODAL */
+/* ================================
+   ABRIR MODAL
+================================ */
 
 function abrirObra(imagem, titulo, descricao){
 
@@ -608,7 +643,9 @@ function abrirObra(imagem, titulo, descricao){
 }
 
 
-/* FECHAR MODAL */
+/* ================================
+   FECHAR MODAL
+================================ */
 
 function fecharObra(){
 
@@ -619,7 +656,9 @@ function fecharObra(){
 }
 
 
-/* FECHAR CLICANDO FORA */
+/* ================================
+   FECHAR CLICANDO FORA
+================================ */
 
 function fecharFora(event){
 
@@ -632,7 +671,9 @@ function fecharFora(event){
 }
 
 
-/* FECHAR COM ESC */
+/* ================================
+   FECHAR COM ESC
+================================ */
 
 document.addEventListener("keydown", function(event){
 
@@ -650,7 +691,3 @@ document.addEventListener("keydown", function(event){
 </body>
 </html>
 ```
-
-Amor, mantive **os 8 trabalhos, os textos e as imagens exatamente da sua página**; só acrescentei o sistema de abertura em tela cheia e deixei o modal responsivo. No celular, ele fica bem mais confortável de visualizar. 💋
-
-Se quiser, também dá pra deixar esse modal **com a mesma identidade visual das páginas de Ilustrações/Grafites/Lambe-Lambe**, para o site inteiro parecer um sistema único.
