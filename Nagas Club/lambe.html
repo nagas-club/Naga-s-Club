@@ -1,15 +1,20 @@
+```html
 <!DOCTYPE html>
 
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Naga's Club</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 <style>
 
@@ -24,14 +29,20 @@ body{
 	margin-right:5%;
 }
 
-/* BANNER */
+
+/* =========================
+   BANNER
+   ========================= */
 
 header img{
 	width:100%;
 	display:block;
 }
 
-/* MENU */
+
+/* =========================
+   MENU
+   ========================= */
 
 nav{
 	width:100%;
@@ -62,7 +73,10 @@ nav ul li a:hover{
 	background:#111;
 }
 
-/* SUBMENU */
+
+/* =========================
+   SUBMENU
+   ========================= */
 
 .dropdown-content{
 	display:none;
@@ -87,7 +101,10 @@ nav ul li a:hover{
 	display:block;
 }
 
-/* GALERIA */
+
+/* =========================
+   GALERIA
+   ========================= */
 
 .galeria{
 	margin-top:40px;
@@ -101,6 +118,7 @@ nav ul li a:hover{
 	width:100%;
 	aspect-ratio:1/1;
 	overflow:hidden;
+	cursor:pointer;
 }
 
 .artes img{
@@ -116,15 +134,185 @@ nav ul li a:hover{
 	filter:brightness(70%);
 }
 
-/* FOOTER */
+
+/* =========================
+   MODAL
+   ========================= */
+
+.modal-obra{
+
+	display:none;
+
+	position:fixed;
+
+	z-index:9999;
+
+	left:0;
+	top:0;
+
+	width:100%;
+	height:100%;
+
+	background:rgba(0,0,0,0.90);
+
+	overflow:auto;
+
+	padding:40px;
+
+}
+
+
+/* CAIXA CENTRAL */
+
+.modal-conteudo{
+
+	position:relative;
+
+	width:90%;
+
+	max-width:1200px;
+
+	margin:0 auto;
+
+	background:#333;
+
+	display:flex;
+
+	align-items:stretch;
+
+	box-shadow:0 0 30px rgba(0,0,0,0.8);
+
+}
+
+
+/* IMAGEM */
+
+.modal-imagem{
+
+	width:65%;
+
+	background:#111;
+
+	display:flex;
+
+	align-items:center;
+
+	justify-content:center;
+
+	padding:20px;
+
+}
+
+
+.modal-imagem img{
+
+	max-width:100%;
+
+	max-height:80vh;
+
+	width:auto;
+
+	height:auto;
+
+	display:block;
+
+}
+
+
+/* INFORMAÇÕES */
+
+.modal-info{
+
+	width:35%;
+
+	background:#891c33;
+
+	color:white;
+
+	padding:35px 25px;
+
+	font-family:Montserrat;
+
+}
+
+
+.modal-info h2{
+
+	font-family:Verdana;
+
+	font-size:30px;
+
+	margin-bottom:25px;
+
+	color:white;
+
+}
+
+
+.modal-info p{
+
+	font-family:Montserrat;
+
+	font-size:15px;
+
+	line-height:1.6;
+
+	color:white;
+
+	padding:0;
+
+}
+
+
+/* BOTÃO FECHAR */
+
+.fechar{
+
+	position:absolute;
+
+	right:15px;
+
+	top:10px;
+
+	z-index:10;
+
+	font-size:35px;
+
+	color:white;
+
+	cursor:pointer;
+
+	font-family:Arial;
+
+	line-height:1;
+
+}
+
+.fechar:hover{
+
+	color:#aa6a85;
+
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
 
 footer{
+
 	background:#891c33;
+
 	color:white;
+
 	text-align:center;
+
 	padding:15px;
+
 	font-family:Montserrat;
+
 	margin-top:40px;
+
 }
 
 
@@ -134,92 +322,193 @@ footer{
 
 @media (max-width:768px){
 
-	/* ESPAÇAMENTO */
-
 	body{
+
 		margin-left:3%;
+
 		margin-right:3%;
+
 	}
 
-	/* BANNER */
 
-	header img{
-		width:100%;
-		height:auto;
-	}
-
-	/* MENU VERTICAL */
+	/* MENU */
 
 	nav{
+
 		margin-top:8px;
+
 	}
 
 	nav ul{
+
 		display:flex;
+
 		flex-direction:column;
+
 		width:100%;
+
 	}
 
 	nav ul li{
+
 		width:100%;
+
 	}
 
 	nav ul li a{
+
 		width:100%;
+
 		text-align:center;
+
 		padding:12px 10px;
+
 		font-size:13px;
+
 	}
+
 
 	/* SUBMENU */
 
 	.dropdown-content{
+
 		position:static;
+
 		width:100%;
+
 		min-width:0;
+
 	}
 
 	.dropdown-content a{
+
 		padding:10px;
+
 		font-size:12px;
+
 		text-align:center;
+
 	}
+
 
 	/* GALERIA */
 
 	.galeria{
+
 		margin-top:25px;
+
 		grid-template-columns:repeat(2,1fr);
+
 		gap:10px;
+
 	}
 
 	.artes{
+
 		width:100%;
+
 		aspect-ratio:1/1;
+
 	}
 
-	.artes img{
-		width:100%;
-		height:100%;
-		object-fit:cover;
-		transform:none;
-		filter:none;
-	}
 
 	/* REMOVE ZOOM NO CELULAR */
 
 	.artes:hover img{
+
 		transform:none;
+
 		filter:none;
+
 	}
+
+
+	/* =========================
+	   MODAL CELULAR
+	   ========================= */
+
+	.modal-obra{
+
+		padding:20px 10px;
+
+	}
+
+
+	.modal-conteudo{
+
+		width:100%;
+
+		display:block;
+
+	}
+
+
+	.modal-imagem{
+
+		width:100%;
+
+		padding:10px;
+
+	}
+
+
+	.modal-imagem img{
+
+		max-width:100%;
+
+		max-height:65vh;
+
+	}
+
+
+	.modal-info{
+
+		width:100%;
+
+		padding:25px 20px;
+
+	}
+
+
+	.modal-info h2{
+
+		font-size:24px;
+
+		margin-bottom:15px;
+
+	}
+
+
+	.modal-info p{
+
+		font-size:14px;
+
+	}
+
+
+	.fechar{
+
+		right:10px;
+
+		top:5px;
+
+		font-size:30px;
+
+	}
+
 
 	/* FOOTER */
 
 	footer{
+
 		margin-top:25px;
+
 		padding:12px 8px;
+
 		font-size:11px;
+
 		line-height:1.4;
+
 	}
 
 }
@@ -243,9 +532,11 @@ footer{
 
 <ul>
 
+
 <li>
 	<a href="index.html">HOME</a>
 </li>
+
 
 <li class="dropdown">
 
@@ -253,11 +544,13 @@ footer{
 
 </li>
 
+
 <li class="dropdown">
 
 	<a href="animas.html">ANIMAÇÕES</a>
 
 </li>
+
 
 <li class="dropdown">
 
@@ -273,17 +566,20 @@ footer{
 
 </li>
 
+
 <li class="dropdown">
 
 	<a href="hq.html">HQ'S</a>
 
 </li>
 
+
 <li>
 
 	<a href="produtos.html">PRODUTOS</a>
 
 </li>
+
 
 <li class="dropdown">
 
@@ -299,80 +595,243 @@ footer{
 
 </li>
 
+
 </ul>
 
 </nav>
 
 
+<!-- =========================
+     GALERIA
+     ========================= -->
+
 <article class="galeria">
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l2.jpg', 'Lambe-Lambe 01', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l2.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l8.jpg', 'Lambe-Lambe 02', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l8.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l4.jpg', 'Lambe-Lambe 03', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l4.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l6.jpg', 'Lambe-Lambe 04', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l6.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l7.jpg', 'Lambe-Lambe 05', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l7.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l12.jpg', 'Lambe-Lambe 06', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l12.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l1.jpg', 'Lambe-Lambe 07', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l1.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l5.jpg', 'Lambe-Lambe 08', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l5.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l3.jpeg', 'Lambe-Lambe 09', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l3.jpeg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l11.jpg', 'Lambe-Lambe 10', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l11.jpg">
+
 </div>
 
 
-<div class="artes">
+<div class="artes"
+onclick="abrirObra('imagens/l10.jpg', 'Lambe-Lambe 11', 'Lambe-lambe autoral.')">
+
 	<img src="imagens/l10.jpg">
+
 </div>
 
 
 </article>
 
 
+<!-- =========================
+     MODAL
+     ========================= -->
+
+<div id="modalObra"
+class="modal-obra"
+onclick="fecharFora(event)">
+
+
+	<div class="modal-conteudo">
+
+
+		<!-- BOTÃO FECHAR -->
+
+		<span class="fechar"
+		onclick="fecharObra()">
+
+			&times;
+
+		</span>
+
+
+		<!-- IMAGEM -->
+
+		<div class="modal-imagem">
+
+			<img id="imagemModal"
+			src=""
+			alt="">
+
+		</div>
+
+
+		<!-- INFORMAÇÕES -->
+
+		<div class="modal-info">
+
+			<h2 id="tituloModal">
+				Título da obra
+			</h2>
+
+			<p id="textoModal">
+				Informações sobre a obra.
+			</p>
+
+		</div>
+
+
+	</div>
+
+</div>
+
+
 <footer>
 
 <p>
+
 	© 2026 Naga's Club — Apoie artistas independentes.
+
 </p>
 
 </footer>
 
 
+<script>
+
+
+/* =========================
+   ABRIR OBRA
+   ========================= */
+
+function abrirObra(imagem, titulo, descricao){
+
+	document.getElementById("imagemModal").src = imagem;
+
+	document.getElementById("imagemModal").alt = titulo;
+
+	document.getElementById("tituloModal").innerText = titulo;
+
+	document.getElementById("textoModal").innerText = descricao;
+
+	document.getElementById("modalObra").style.display = "flex";
+
+	document.body.style.overflow = "hidden";
+
+}
+
+
+/* =========================
+   FECHAR OBRA
+   ========================= */
+
+function fecharObra(){
+
+	document.getElementById("modalObra").style.display = "none";
+
+	document.body.style.overflow = "auto";
+
+}
+
+
+/* =========================
+   FECHAR CLICANDO FORA
+   ========================= */
+
+function fecharFora(event){
+
+	if(event.target === document.getElementById("modalObra")){
+
+		fecharObra();
+
+	}
+
+}
+
+
+/* =========================
+   FECHAR COM ESC
+   ========================= */
+
+document.addEventListener("keydown", function(event){
+
+	if(event.key === "Escape"){
+
+		fecharObra();
+
+	}
+
+});
+
+</script>
+
+
 </body>
 </html>
+```
