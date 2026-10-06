@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Produtos | Naga's Club</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* BANNER */
+
+header img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* MENU */
+
+nav {
+    width: 100%;
+    background: #333;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: #111;
+    color: white;
+    text-decoration: none;
+}
+
+/* SUBMENU */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #333;
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background: #111;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* TITULO DA PAGINA */
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    background: #891c33;
+    font-family: Verdana, sans-serif;
+    padding: 12px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* PRODUTOS */
+
+.produto {
+    width: 100%;
+    margin-top: 30px;
+    overflow: hidden;
+    background: #aa6a85;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* IMAGEM DO PRODUTO */
+
+.produto-img {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.produto-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+    transition: opacity 0.25s ease;
+}
+
+.produto-img img:hover {
+    opacity: 0.85;
+}
+
+/* INFORMACOES */
+
+.produto-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.produto-info h2 {
+    background: none;
+    text-align: left;
+    font-size: 32px;
+    color: white;
+    font-family: Verdana, sans-serif;
+    margin-bottom: 15px;
+    line-height: 1.25;
+}
+
+.produto-info p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 0;
+}
+
+.preco {
+    font-size: 30px;
+    color: #ffd700;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+/* BOTAO WHATSAPP */
+
+.botao-comprar {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 13px 25px;
+    background: #891c33;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.botao-comprar:hover,
+.botao-comprar:focus {
+    background: #5e1223;
+    color: white;
+    text-decoration: none;
+}
+
+/* JANELA DA IMAGEM AMPLIADA */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.93);
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px 20px;
+}
+
+.lightbox.ativo {
+    display: flex;
+}
+
+.lightbox-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 95%;
+    max-height: 100%;
+}
+
+.lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.lightbox-legenda {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.lightbox-fechar {
+    position: absolute;
+    top: 12px;
+    right: 25px;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 42px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px 12px;
+}
+
+.lightbox-fechar:hover,
+.lightbox-fechar:focus {
+    color: #aa6a85;
+    outline: none;
+}
+
+/* RODAPE */
+
+footer {
+    background: #891c33;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px;
+}
+
+footer p {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+/* CELULAR E TABLET */
+
+@media (max-width: 768px) {
+
+    body {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    nav {
+        margin-top: 8px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .titulo-pagina {
+        font-size: 27px;
+        padding: 12px 5px;
+        margin-top: 20px;
+    }
+
+    .produto {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin-top: 25px;
+        padding: 15px;
+    }
+
+    .produto-img {
+        width: 100%;
+    }
+
+    .produto-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .produto-info {
+        width: 100%;
+    }
+
+    .produto-info h2 {
+        font-size: 25px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 12px;
+    }
+
+    .produto-info p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .preco {
+        font-size: 26px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .botao-comprar {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        margin-top: 15px;
+        font-size: 15px;
+    }
+
+    footer {
+        margin-top: 25px;
+        padding: 12px 8px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .lightbox {
+        padding: 50px 10px 15px;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 78vh;
+    }
+
+    .lightbox-fechar {
+        top: 10px;
+        right: 10px;
+        font-size: 38px;
+    }
+
+    .lightbox-legenda {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BANNER -->
+
+<header>
+    <img src="imagens/banner colorido.gif" alt="Banner Naga's Club">
+</header>
+
+<!-- MENU -->
+
+<nav>
+    <ul>
+
+        <li>
+            <a href="index.html">HOME</a>
+        </li>
+
+        <li>
+            <a href="ilustras.html">ILUSTRAÇÕES</a>
+        </li>
+
+        <li>
+            <a href="animas.html">ANIMAÇÕES</a>
+        </li>
+
+        <li class="dropdown">
+            <a href="grafites.html">STREET ART</a>
+
+            <div class="dropdown-content">
+                <a href="grafites.html">GRAFITES</a>
+                <a href="lambe.html">LAMBE-LAMBE</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="hq.html">HQ'S</a>
+        </li>
+
+        <li>
+            <a href="produtos.html">PRODUTOS</a>
+        </li>
+
+        <li class="dropdown">
+            <a href="expos.html">SOBRE</a>
+
+            <div class="dropdown-content">
+                <a href="expos.html">EXPOSIÇÕES</a>
+                <a href="contato.html">CONTATO</a>
+            </div>
+        </li>
+
+    </ul>
+</nav>
+
+<main>
+
+    <h1 class="titulo-pagina">PRODUTOS</h1>
+
+    <!-- PRODUTO 1 -->
+
+    <article class="produto">
+
+        <div class="produto-img">
+            <img
+                src="imagens/c1.jpg"
+                alt="Camiseta Pussy Cat"
+                class="imagem-ampliavel"
+                data-titulo="Camiseta Pussy Cat"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="produto-info">
+
+            <h2>Camiseta Pussy Cat</h2>
+
+            <p>
+                Camiseta "Pussy Cat", arte autoral exclusiva do Naga's Club.
+                <br><br>
+                Cada peça é pensada para transformar uma simples camiseta
+                em um grande close.
+                <br><br>
+                Disponível nos tamanhos PP, P, M, G, GG e XG, garantindo
+                conforto para diferentes corpos e estilos.
+                <br><br>
+                Disponível nas cores branca e preta, perfeitas para destacar
+                as artes e combinar com qualquer visual.
+                <br><br>
+                Ideal para quem quer vestir arte e apoiar artistas independentes.
+            </p>
+
+            <div class="preco">R$ 99,90</div>
+
+            <a
+                href="https://wa.me/5511991322733?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20camiseta%20Pussy%20Cat%20do%20Naga%27s%20Club.%20Gostaria%20de%20saber%20a%20disponibilidade."
+                class="botao-comprar"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Comprar pelo WhatsApp
+            </a>
+
+        </div>
+
+    </article>
+
+    <!-- PRODUTO 2 -->
+
+    <article class="produto">
+
+        <div class="produto-img">
+            <img
+                src="imagens/c2.jpg"
+                alt="Camiseta Caracool"
+                class="imagem-ampliavel"
+                data-titulo="Camiseta Caracool"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="produto-info">
+
+            <h2>Camiseta Caracool</h2>
+
+            <p>
+                Camiseta "Caracool", arte autoral exclusiva do Naga's Club.
+                <br><br>
+                Cada peça é pensada para transformar uma simples camiseta
+                em um grande close.
+                <br><br>
+                Disponível nos tamanhos PP, P, M, G, GG e XG, garantindo
+                conforto para diferentes corpos e estilos.
+                <br><br>
+                Disponível nas cores branca e preta, perfeitas para destacar
+                as artes e combinar com qualquer visual.
+                <br><br>
+                Ideal para quem quer vestir arte e apoiar artistas independentes.
+            </p>
+
+            <div class="preco">R$ 99,90</div>
+
+            <a
+                href="https://wa.me/5511991322733?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20camiseta%20Caracool%20do%20Naga%27s%20Club.%20Gostaria%20de%20saber%20a%20disponibilidade."
+                class="botao-comprar"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Comprar pelo WhatsApp
+            </a>
+
+        </div>
+
+    </article>
+
+    <!-- PRODUTO 3 -->
+
+    <article class="produto">
+
+        <div class="produto-img">
+            <img
+                src="imagens/c3.jpg"
+                alt="Camiseta Mia Wallace"
+                class="imagem-ampliavel"
+                data-titulo="Camiseta Mia Wallace"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="produto-info">
+
+            <h2>Camiseta Mia Wallace</h2>
+
+            <p>
+                Camiseta "Mia Wallace", arte autoral exclusiva do Naga's Club.
+                <br><br>
+                Cada peça é pensada para transformar uma simples camiseta
+                em um grande close.
+                <br><br>
+                Disponível nos tamanhos PP, P, M, G, GG e XG, garantindo
+                conforto para diferentes corpos e estilos.
+                <br><br>
+                Disponível nas cores branca e preta, perfeitas para destacar
+                as artes e combinar com qualquer visual.
+                <br><br>
+                Ideal para quem quer vestir arte e apoiar artistas independentes.
+            </p>
+
+            <div class="preco">R$ 99,90</div>
+
+            <a
+                href="https://wa.me/5511991322733?text=Ol%C3%A1%21%20Tenho%20interesse%20na%20camiseta%20Mia%20Wallace%20do%20Naga%27s%20Club.%20Gostaria%20de%20saber%20a%20disponibilidade."
+                class="botao-comprar"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Comprar pelo WhatsApp
+            </a>
+
+        </div>
+
+    </article>
+
+</main>
+
+<!-- JANELA PARA AMPLIAR AS FOTOS -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Imagem ampliada do produto"
+    aria-hidden="true"
+>
+    <button
+        type="button"
+        class="lightbox-fechar"
+        id="fecharLightbox"
+        aria-label="Fechar imagem"
+    >
+        &times;
+    </button>
+
+    <div class="lightbox-conteudo">
+
+        <img src="" alt="" id="imagemAmpliada">
+
+        <div class="lightbox-legenda" id="legendaImagem"></div>
+
+    </div>
+</div>
+
+<!-- RODAPE -->
+
+<footer>
+    <p>
+        © 2026 Naga's Club — Apoie artistas independentes.
+    </p>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+$(document).ready(function () {
+
+    var $lightbox = $("#lightbox");
+    var $imagemAmpliada = $("#imagemAmpliada");
+    var $legendaImagem = $("#legendaImagem");
+    var $botaoFechar = $("#fecharLightbox");
+    var elementoAnterior = null;
+
+    // ABRIR IMAGEM AO CLICAR
+
+    $(".imagem-ampliavel").on("click", function () {
+
+        var imagem = $(this).attr("src");
+        var titulo = $(this).attr("data-titulo");
+        var descricao = $(this).attr("alt");
+
+        elementoAnterior = this;
+
+        $imagemAmpliada.attr("src", imagem);
+        $imagemAmpliada.attr("alt", descricao);
+        $legendaImagem.text(titulo);
+
+        $lightbox.addClass("ativo");
+        $lightbox.attr("aria-hidden", "false");
+
+        $("body").css("overflow", "hidden");
+
+        $botaoFechar.trigger("focus");
+    });
+
+    // FECHAR IMAGEM
+
+    function fecharImagem() {
+
+        $lightbox.removeClass("ativo");
+        $lightbox.attr("aria-hidden", "true");
+
+        $imagemAmpliada.attr("src", "");
+        $imagemAmpliada.attr("alt", "");
+        $legendaImagem.text("");
+
+        $("body").css("overflow", "");
+
+        if (elementoAnterior) {
+            elementoAnterior.focus();
+        }
+    }
+
+    $botaoFechar.on("click", function () {
+        fecharImagem();
+    });
+
+    // FECHAR AO CLICAR FORA DA FOTO
+
+    $lightbox.on("click", function (evento) {
+
+        if (evento.target === this) {
+            fecharImagem();
+        }
+
+    });
+
+    // FECHAR COM A TECLA ESC
+
+    $(document).on("keydown", function (evento) {
+
+        if (evento.key === "Escape" && $lightbox.hasClass("ativo")) {
+            fecharImagem();
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>

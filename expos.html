@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Naga's Club</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+
+*{
+	box-sizing:border-box;
+	padding:0;
+	margin:0;
+}
+
+body{
+	margin-left:5%;
+	margin-right:5%;
+}
+
+/* ================================
+   BANNER
+================================ */
+
+header img{
+	width:100%;
+	display:block;
+}
+
+
+/* ================================
+   MENU
+================================ */
+
+nav{
+	width:100%;
+	background:#333;
+	margin-top:10px;
+	position:relative;
+	z-index:1000;
+}
+
+nav ul{
+	list-style:none;
+	display:flex;
+}
+
+nav ul li{
+	position:relative;
+}
+
+nav ul li a{
+	display:block;
+	padding:14px 20px;
+	color:white;
+	text-decoration:none;
+	font-family:Montserrat;
+}
+
+nav ul li a:hover{
+	background:#111;
+}
+
+
+/* ================================
+   SUBMENU
+================================ */
+
+.dropdown-content{
+	display:none;
+	position:absolute;
+	background:#333;
+	min-width:160px;
+	top:100%;
+	left:0;
+}
+
+.dropdown-content a{
+	padding:12px 16px;
+	display:block;
+	color:white;
+}
+
+.dropdown-content a:hover{
+	background:#111;
+}
+
+.dropdown:hover .dropdown-content{
+	display:block;
+}
+
+
+/* ================================
+   GALERIA
+================================ */
+
+.galeria{
+	margin-top:40px;
+	display:grid;
+	grid-template-columns:repeat(4,1fr);
+	gap:30px;
+}
+
+.artes{
+	width:100%;
+	cursor:pointer;
+	overflow:hidden;
+}
+
+.artes img{
+	width:100%;
+	aspect-ratio:1/1;
+	object-fit:cover;
+	display:block;
+	transition:transform 0.4s;
+}
+
+.artes:hover img{
+	transform:scale(1.1);
+	filter:brightness(70%);
+}
+
+
+/* ================================
+   MODAL
+================================ */
+
+.modal-obra{
+	display:none;
+	position:fixed;
+	z-index:9999;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.90);
+	align-items:center;
+	justify-content:center;
+	padding:40px;
+}
+
+.modal-conteudo{
+	width:90%;
+	max-width:1200px;
+	max-height:90vh;
+	display:flex;
+	background:#333;
+	overflow:hidden;
+}
+
+.modal-imagem{
+	width:65%;
+	background:#111;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:20px;
+}
+
+.modal-imagem img{
+	max-width:100%;
+	max-height:80vh;
+	width:auto;
+	height:auto;
+	object-fit:contain;
+	display:block;
+}
+
+.modal-info{
+	width:35%;
+	background:#891c33;
+	color:white;
+	padding:35px 25px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+}
+
+.modal-info h2{
+	font-family:Montserrat;
+	font-size:25px;
+	margin-bottom:20px;
+}
+
+.modal-info p{
+	font-family:Montserrat;
+	font-size:14px;
+	line-height:1.6;
+}
+
+
+/* ================================
+   BOTÃO FECHAR
+================================ */
+
+.fechar-modal{
+	position:absolute;
+	top:20px;
+	right:30px;
+	color:white;
+	font-size:40px;
+	font-weight:bold;
+	cursor:pointer;
+	line-height:1;
+	z-index:10000;
+}
+
+.fechar-modal:hover{
+	color:#891c33;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer{
+	background:#891c33;
+	color:white;
+	text-align:center;
+	padding:15px;
+	font-family:Montserrat;
+	margin-top:40px;
+}
+
+
+/* ================================
+   CELULAR
+================================ */
+
+@media (max-width:768px){
+
+	body{
+		margin-left:3%;
+		margin-right:3%;
+	}
+
+
+	/* BANNER */
+
+	header img{
+		width:100%;
+		height:auto;
+	}
+
+
+	/* MENU VERTICAL */
+
+	nav{
+		margin-top:8px;
+	}
+
+	nav ul{
+		display:flex;
+		flex-direction:column;
+		width:100%;
+	}
+
+	nav ul li{
+		width:100%;
+	}
+
+	nav ul li a{
+		width:100%;
+		text-align:center;
+		padding:12px 10px;
+		font-size:13px;
+	}
+
+
+	/* SUBMENU */
+
+	.dropdown-content{
+		position:static;
+		width:100%;
+		min-width:0;
+	}
+
+	.dropdown-content a{
+		padding:10px;
+		font-size:12px;
+		text-align:center;
+	}
+
+
+	/* GALERIA */
+
+	.galeria{
+		margin-top:25px;
+		grid-template-columns:repeat(2,1fr);
+		gap:10px;
+	}
+
+	.artes{
+		width:100%;
+	}
+
+	.artes img{
+		width:100%;
+		aspect-ratio:1/1;
+		object-fit:cover;
+		transform:none;
+		filter:none;
+	}
+
+	.artes:hover img{
+		transform:none;
+		filter:none;
+	}
+
+
+	/* MODAL */
+
+	.modal-obra{
+		padding:15px;
+		align-items:center;
+	}
+
+	.modal-conteudo{
+		width:100%;
+		max-height:90vh;
+		display:block;
+		overflow-y:auto;
+	}
+
+	.modal-imagem{
+		width:100%;
+		padding:15px;
+	}
+
+	.modal-imagem img{
+		width:100%;
+		max-height:55vh;
+		object-fit:contain;
+	}
+
+	.modal-info{
+		width:100%;
+		padding:20px;
+	}
+
+	.modal-info h2{
+		font-size:20px;
+		margin-bottom:10px;
+	}
+
+	.modal-info p{
+		font-size:12px;
+		line-height:1.5;
+	}
+
+
+	/* BOTÃO FECHAR */
+
+	.fechar-modal{
+		top:8px;
+		right:15px;
+		font-size:32px;
+	}
+
+
+	/* FOOTER */
+
+	footer{
+		margin-top:25px;
+		padding:12px 8px;
+		font-size:11px;
+		line-height:1.4;
+	}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+	<img src="imagens/banner colorido.gif">
+
+</header>
+
+
+<nav>
+
+<ul>
+
+<li>
+	<a href="index.html">HOME</a>
+</li>
+
+
+<li class="dropdown">
+	<a href="ilustras.html">ILUSTRAÇÕES</a>
+</li>
+
+
+<li class="dropdown">
+	<a href="animas.html">ANIMAÇÕES</a>
+</li>
+
+
+<li class="dropdown">
+
+	<a href="grafites.html">STREET ART</a>
+
+	<div class="dropdown-content">
+
+		<a href="grafites.html">GRAFITES</a>
+
+		<a href="lambe.html">LAMBE-LAMBE</a>
+
+	</div>
+
+</li>
+
+
+<li class="dropdown">
+	<a href="hq.html">HQ'S</a>
+</li>
+
+
+<li>
+	<a href="produtos.html">PRODUTOS</a>
+</li>
+
+
+<li class="dropdown">
+
+	<a href="expos.html">SOBRE</a>
+
+	<div class="dropdown-content">
+
+		<a href="expos.html">EXPOSIÇÕES</a>
+
+		<a href="contato.html">CONTATO</a>
+
+	</div>
+
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- ================================
+     GALERIA
+================================ -->
+
+<article class="galeria">
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/reu.png',
+	'Reunydas',
+	'Grafite — Viradouro, Niterói, RJ — 2026'
+	)">
+
+	<img src="imagens/reu.png">
+
+</div>
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/yabas.jpg',
+	'Quintal das Yabás',
+	'Live Paint — Taboão, SP — 2026'
+	)">
+
+	<img src="imagens/yabas.jpg">
+
+</div>
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/e4.jpg',
+	'C.C Hip Hop Sul',
+	'Live Paint — Vila São Pedro, SP — 2026'
+	)">
+
+	<img src="imagens/e4.jpg">
+
+</div>
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/e5.jpg',
+	'Ocupação 9 de Julho',
+	'Live Paint — Bela Vista, SP — 2025'
+	)">
+
+	<img src="imagens/e5.jpg">
+
+</div>
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/reunidas.jpg',
+	'Live Paint — Niterói',
+	'Niterói — Rio de Janeiro, RJ — 2025'
+	)">
+
+	<img src="imagens/reunidas.jpg">
+
+</div>
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/e3.jpg',
+	'Hacker Hostel',
+	'Exposição — Paraíso, SP — 2025'
+	)">
+
+	<img src="imagens/e3.jpg">
+
+</div>
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/e2.jpg',
+	'Largo da Misericórdia',
+	'Exposição — Sé, SP — 2024'
+	)">
+
+	<img src="imagens/e2.jpg">
+
+</div>
+
+
+<div class="artes"
+	onclick="abrirObra(
+	'imagens/e1.jpg',
+	'Presidenta Bar',
+	'Exposição — Consolação, SP — 2024'
+	)">
+
+	<img src="imagens/e1.jpg">
+
+</div>
+
+
+</article>
+
+
+<!-- ================================
+     MODAL
+================================ -->
+
+<div id="modalObra"
+	class="modal-obra"
+	onclick="fecharFora(event)">
+
+
+	<span class="fechar-modal"
+		onclick="fecharObra()">
+
+		&times;
+
+	</span>
+
+
+	<div class="modal-conteudo">
+
+
+		<div class="modal-imagem">
+
+			<img
+				id="imagemModal"
+				src=""
+				alt=""
+			>
+
+		</div>
+
+
+		<div class="modal-info">
+
+			<h2 id="tituloModal"></h2>
+
+			<p id="textoModal"></p>
+
+		</div>
+
+
+	</div>
+
+
+</div>
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+
+<footer>
+
+	<p>
+		© 2026 Naga's Club — Apoie artistas independentes.
+	</p>
+
+</footer>
+
+
+<script>
+
+/* ================================
+   ABRIR MODAL
+================================ */
+
+function abrirObra(imagem, titulo, descricao){
+
+	document.getElementById("imagemModal").src = imagem;
+
+	document.getElementById("imagemModal").alt = titulo;
+
+	document.getElementById("tituloModal").innerText = titulo;
+
+	document.getElementById("textoModal").innerText = descricao;
+
+	document.getElementById("modalObra").style.display = "flex";
+
+	document.body.style.overflow = "hidden";
+
+}
+
+
+/* ================================
+   FECHAR MODAL
+================================ */
+
+function fecharObra(){
+
+	document.getElementById("modalObra").style.display = "none";
+
+	document.body.style.overflow = "auto";
+
+}
+
+
+/* ================================
+   FECHAR CLICANDO FORA
+================================ */
+
+function fecharFora(event){
+
+	if(event.target === document.getElementById("modalObra")){
+
+		fecharObra();
+
+	}
+
+}
+
+
+/* ================================
+   FECHAR COM ESC
+================================ */
+
+document.addEventListener("keydown", function(event){
+
+	if(event.key === "Escape"){
+
+		fecharObra();
+
+	}
+
+});
+
+</script>
+
+
+</body>
+</html>
+

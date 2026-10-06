@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nagaz Rage - Parte I | Naga's Club</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 5%;
+            background-color: white;
+            color: #333;
+            font-family: Verdana, sans-serif;
+        }
+
+
+        /* =========================
+           BANNER
+           ========================= */
+
+        header {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* =========================
+           MENU
+           ========================= */
+
+        nav {
+            width: 100%;
+            background-color: #333;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 18px;
+            font-family: Verdana, sans-serif;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            background-color: #891c33;
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           DROPDOWN
+           ========================= */
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 180px;
+            z-index: 1000;
+        }
+
+        .dropdown-content a {
+            width: 100%;
+            padding: 12px 15px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        /* =========================
+           TÍTULO
+           ========================= */
+
+        h1 {
+            background-color: #891c33;
+            color: white;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+            font-size: 40px;
+            padding: 10px;
+            margin: 0 0 30px 0;
+        }
+
+
+        /* =========================
+           TEXTO
+           ========================= */
+
+        .intro {
+            font-family: Montserrat, sans-serif;
+            font-size: 18px;
+            text-align: center;
+            margin: 0 auto 30px auto;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           CARROSSEL
+           ========================= */
+
+        .hq-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+        }
+
+        .carousel {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        .carousel-inner {
+            background-color: white;
+        }
+
+        .carousel-inner .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+
+        /* SETAS */
+
+        .carousel-control.left,
+        .carousel-control.right {
+            background-image: none;
+        }
+
+        .carousel-control {
+            width: 10%;
+        }
+
+        .carousel-control .glyphicon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+        }
+
+
+        /* INDICADORES */
+
+        .carousel-indicators {
+            bottom: 5px;
+        }
+
+
+        /* =========================
+           INFORMAÇÃO DA PÁGINA
+           ========================= */
+
+        .pagina-info {
+            text-align: center;
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            margin-top: 15px;
+            color: #555;
+        }
+
+
+        /* =========================
+           BOTÃO VOLTAR
+           ========================= */
+
+        .voltar {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 50px auto;
+            padding: 12px 25px;
+            background-color: #891c33;
+            color: white;
+            text-decoration: none;
+            font-family: Verdana, sans-serif;
+            font-size: 14px;
+        }
+
+        .voltar:hover {
+            background-color: #aa6a85;
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background-color: #891c33;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-family: Verdana, sans-serif;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CELULAR
+           ========================= */
+
+        @media (max-width: 768px) {
+
+            body {
+                margin: 0 3%;
+            }
+
+
+            /* MENU */
+
+            nav ul {
+                display: block;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li a {
+                text-align: center;
+                padding: 12px;
+            }
+
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                min-width: 0;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+
+            /* TÍTULO */
+
+            h1 {
+                font-size: 28px;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+
+            /* TEXTO */
+
+            .intro {
+                font-size: 14px;
+                padding: 0 5px;
+                margin-bottom: 20px;
+            }
+
+
+            /* CARROSSEL */
+
+            .hq-container {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .carousel {
+                padding: 5px;
+            }
+
+            .carousel-control {
+                width: 15%;
+            }
+
+            .carousel-control .glyphicon {
+                font-size: 22px;
+            }
+
+            .carousel-indicators {
+                bottom: 0;
+            }
+
+
+            /* BOTÃO */
+
+            .voltar {
+                font-size: 13px;
+                padding: 10px 18px;
+                margin-bottom: 30px;
+            }
+
+
+            /* FOOTER */
+
+            footer {
+                font-size: 12px;
+                padding: 15px 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BANNER
+         ========================= -->
+
+    <header>
+
+        <img src="imagens/banner colorido.gif"
+             alt="Naga's Club">
+
+    </header>
+
+
+    <!-- =========================
+         MENU
+         ========================= -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">HOME</a>
+            </li>
+
+            <li>
+                <a href="ilustras.html">ILUSTRAÇÕES</a>
+            </li>
+
+            <li>
+                <a href="animas.html">ANIMAÇÕES</a>
+            </li>
+
+
+            <li class="dropdown">
+
+                <a href="#">
+                    STREET ART
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="grafites.html">
+                        GRAFITES
+                    </a>
+
+                    <a href="lambes.html">
+                        LAMBE-LAMBE
+                    </a>
+
+                </div>
+
+            </li>
+
+
+            <li>
+                <a href="hq.html">HQ'S</a>
+            </li>
+
+
+            <li>
+                <a href="produtos.html">PRODUTOS</a>
+            </li>
+
+
+            <li class="dropdown">
+
+                <a href="#">
+                    SOBRE
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a href="exposicoes.html">
+                        EXPOSIÇÕES
+                    </a>
+
+                    <a href="contato.html">
+                        CONTATO
+                    </a>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         TÍTULO
+         ========================= -->
+
+    <h1>
+        Nagaz Rage - Parte I
+    </h1>
+
+
+    <!-- =========================
+         DESCRIÇÃO
+         ========================= -->
+
+    <p class="intro">
+
+        Dois anos após sobreviver a uma agressão brutal,
+        Nagazaki dá início à sua vingança.
+        Seu primeiro alvo: o líder da gangue.
+        Inspirada em uma vivência real, dividida em quatro partes.
+
+    </p>
+
+
+    <!-- =========================
+         CARROSSEL DA HQ
+         ========================= -->
+
+    <div class="hq-container">
+
+        <div id="hqCarousel"
+             class="carousel slide"
+             data-ride="carousel">
+
+
+            <!-- INDICADORES -->
+
+            <ol class="carousel-indicators">
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="0"
+                    class="active">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="1">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="2">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="3">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="4">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="5">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="6">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="7">
+                </li>
+
+                <li data-target="#hqCarousel"
+                    data-slide-to="8">
+                </li>
+
+            </ol>
+
+
+            <!-- =========================
+                 PÁGINAS
+                 ========================= -->
+
+            <div class="carousel-inner">
+
+
+                <!-- PÁGINA 1 -->
+
+                <div class="item active">
+
+                    <img src="imagens/rage1.jpg"
+                         alt="Nagaz Rage - Página 1">
+
+                </div>
+
+
+                <!-- PÁGINA 2 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage2.jpg"
+                         alt="Nagaz Rage - Página 2">
+
+                </div>
+
+
+                <!-- PÁGINA 3 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage3.jpg"
+                         alt="Nagaz Rage - Página 3">
+
+                </div>
+
+
+                <!-- PÁGINA 4 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage4.jpg"
+                         alt="Nagaz Rage - Página 4">
+
+                </div>
+
+
+                <!-- PÁGINA 5 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage5.jpg"
+                         alt="Nagaz Rage - Página 5">
+
+                </div>
+
+
+                <!-- PÁGINA 6 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage6.jpg"
+                         alt="Nagaz Rage - Página 6">
+
+                </div>
+
+
+                <!-- PÁGINA 7 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage7.jpg"
+                         alt="Nagaz Rage - Página 7">
+
+                </div>
+
+
+                <!-- PÁGINA 8 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage8.jpg"
+                         alt="Nagaz Rage - Página 8">
+
+                </div>
+
+
+                <!-- PÁGINA 9 -->
+
+                <div class="item">
+
+                    <img src="imagens/rage9.jpg"
+                         alt="Nagaz Rage - Página 9">
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 SETA ESQUERDA
+                 ========================= -->
+
+            <a class="left carousel-control"
+               href="#hqCarousel"
+               data-slide="prev">
+
+                <span class="glyphicon glyphicon-chevron-left"></span>
+
+                <span class="sr-only">
+                    Anterior
+                </span>
+
+            </a>
+
+
+            <!-- =========================
+                 SETA DIREITA
+                 ========================= -->
+
+            <a class="right carousel-control"
+               href="#hqCarousel"
+               data-slide="next">
+
+                <span class="glyphicon glyphicon-chevron-right"></span>
+
+                <span class="sr-only">
+                    Próxima
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+        <p class="pagina-info">
+            Use as setas ou os indicadores para navegar pelas páginas.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         VOLTAR
+         ========================= -->
+
+    <a href="hq.html"
+       class="voltar">
+
+        ← Voltar para HQ's
+
+    </a>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        Naga's Club © 2026 — Naga Miguel
+
+    </footer>
+
+
+    <!-- jQuery -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
+```

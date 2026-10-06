@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Naga's Club</title>
+
+
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+
+*{
+	box-sizing:border-box;
+	padding:0;
+	margin:0;
+}
+
+
+/* =========================
+   TÍTULOS
+   ========================= */
+
+h2{
+	text-align:center;
+	font-size:40px;
+	color:white;
+	background:#891c33;
+	font-family:Verdana;
+	padding:10px;
+}
+
+
+/* =========================
+   TEXTOS
+   ========================= */
+
+p{
+	font-family:Montserrat;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:10px;
+	color:white;
+}
+
+
+/* =========================
+   BODY
+   ========================= */
+
+body{
+	margin-left:5%;
+	margin-right:5%;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header img{
+	width:100%;
+	display:block;
+}
+
+
+/* =========================
+   MENU
+   ========================= */
+
+nav{
+	width:100%;
+	background:#333;
+	margin-top:10px;
+	position:relative;
+	z-index:1000;
+}
+
+nav ul{
+	list-style:none;
+	display:flex;
+}
+
+nav ul li{
+	position:relative;
+}
+
+nav ul li a{
+	display:block;
+	padding:14px 20px;
+	color:white;
+	text-decoration:none;
+	font-family:Montserrat;
+}
+
+nav ul li a:hover{
+	background:#111;
+}
+
+
+/* =========================
+   SUBMENU
+   ========================= */
+
+.dropdown-content{
+	display:none;
+	position:absolute;
+	background:#333;
+	min-width:160px;
+	top:100%;
+	left:0;
+}
+
+.dropdown-content a{
+	padding:12px 16px;
+	display:block;
+	color:white;
+}
+
+.dropdown-content a:hover{
+	background:#111;
+}
+
+.dropdown:hover .dropdown-content{
+	display:block;
+}
+
+
+/* =========================
+   BLOCOS DAS HQs
+   ========================= */
+
+.colab{
+	width:100%;
+	margin-top:40px;
+	overflow:hidden;
+	background-color:#aa6a85;
+}
+
+
+/* =========================
+   LINK DA HQ
+   ========================= */
+
+.colab-link{
+	display:block;
+	width:100%;
+	color:inherit;
+	text-decoration:none;
+	overflow:hidden;
+	cursor:pointer;
+}
+
+.colab-link:hover{
+	color:inherit;
+	text-decoration:none;
+}
+
+
+/* =========================
+   IMAGEM
+   ========================= */
+
+.colab-img{
+	width:30%;
+	float:left;
+	overflow:hidden;
+}
+
+.colab-img img{
+	width:100%;
+	display:block;
+	transition:transform 0.3s;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.colab-link:hover .colab-img img{
+	transform:scale(1.03);
+}
+
+
+/* =========================
+   TEXTO
+   ========================= */
+
+.colab-text{
+	width:70%;
+	float:left;
+	padding-left:20px;
+}
+
+.colab-text h2{
+	font-family:Montserrat;
+	margin-bottom:10px;
+}
+
+.colab-text p{
+	font-family:Montserrat;
+	line-height:1.5;
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer{
+	background:#891c33;
+	color:white;
+	text-align:center;
+	padding:15px;
+	font-family:Montserrat;
+	margin-top:40px;
+}
+
+footer p{
+	color:white;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE PARA CELULAR
+   ========================================= */
+
+@media(max-width:768px){
+
+	body{
+		margin-left:3%;
+		margin-right:3%;
+	}
+
+
+	/* MENU */
+
+	nav ul{
+		display:flex;
+		flex-direction:column;
+	}
+
+	nav ul li{
+		width:100%;
+	}
+
+	nav ul li a{
+		text-align:center;
+		padding:12px;
+	}
+
+
+	/* SUBMENUS */
+
+	.dropdown-content{
+		position:static;
+		width:100%;
+		min-width:0;
+	}
+
+	.dropdown:hover .dropdown-content{
+		display:block;
+	}
+
+
+	/* BLOCOS */
+
+	.colab{
+		margin-top:20px;
+	}
+
+
+	/* IMAGEM */
+
+	.colab-img{
+		width:100%;
+		float:none;
+	}
+
+	.colab-img img{
+		width:100%;
+	}
+
+
+	/* TEXTO */
+
+	.colab-text{
+		width:100%;
+		float:none;
+		padding:0;
+		padding-bottom:15px;
+	}
+
+	.colab-text h2{
+		font-size:28px;
+		margin-bottom:5px;
+	}
+
+	.colab-text p{
+		font-size:14px;
+		padding-left:15px;
+		padding-right:15px;
+		line-height:1.5;
+	}
+
+
+	/* RODAPÉ */
+
+	footer{
+		margin-top:25px;
+	}
+
+	footer p{
+		font-size:12px;
+		line-height:1.4;
+		padding:0 5px;
+	}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+	<img src="imagens/banner colorido.gif"
+	     alt="Naga's Club">
+
+</header>
+
+
+
+<!-- =========================
+     MENU
+     ========================= -->
+
+<nav>
+
+<ul>
+
+
+<li>
+
+	<a href="index.html">HOME</a>
+
+</li>
+
+
+
+<li>
+
+	<a href="ilustras.html">ILUSTRAÇÕES</a>
+
+</li>
+
+
+
+<li>
+
+	<a href="animas.html">ANIMAÇÕES</a>
+
+</li>
+
+
+
+<li class="dropdown">
+
+	<a href="grafites.html">STREET ART</a>
+
+	<div class="dropdown-content">
+
+		<a href="grafites.html">GRAFITES</a>
+
+		<a href="lambe.html">LAMBE-LAMBE</a>
+
+	</div>
+
+</li>
+
+
+
+<li>
+
+	<a href="hq.html">HQ'S</a>
+
+</li>
+
+
+
+<li>
+
+	<a href="produtos.html">PRODUTOS</a>
+
+</li>
+
+
+
+<li class="dropdown">
+
+	<a href="expos.html">SOBRE</a>
+
+	<div class="dropdown-content">
+
+		<a href="expos.html">EXPOSIÇÕES</a>
+
+		<a href="contato.html">CONTATO</a>
+
+	</div>
+
+</li>
+
+
+</ul>
+
+</nav>
+
+
+
+<!-- =========================
+     HQs
+     ========================= -->
+
+<main>
+
+
+<!-- =========================
+     HQ 1
+     ========================= -->
+
+<article class="colab">
+
+<a href="rage.html"
+   target="_blank"
+   rel="noopener"
+   class="colab-link">
+
+
+	<div class="colab-img">
+
+		<img src="imagens/rage.png"
+		     alt="Nagaz Rage - Parte I">
+
+	</div>
+
+
+	<div class="colab-text">
+
+		<h2>Nagaz Rage - Parte I</h2>
+
+		<p>
+
+			Dois anos após sobreviver a uma agressão brutal,
+			Nagazaki dá início à sua vingança.
+			Seu primeiro alvo: o líder da gangue.
+			Inspirada em uma vivência real, dividida em quatro partes.
+
+		</p>
+
+	</div>
+
+
+</a>
+
+</article>
+
+
+
+<!-- =========================
+     HQ 2 só copiar o de cima e colar em baixo
+     ========================= -->
+
+
+
+</main>
+
+
+
+<!-- =========================
+     RODAPÉ
+     ========================= -->
+
+<footer>
+
+<p>
+	© 2026 Naga's Club — Apoie artistas independentes.
+</p>
+
+</footer>
+
+
+</body>
+
+</html>
